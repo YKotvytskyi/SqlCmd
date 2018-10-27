@@ -8,20 +8,15 @@ import java.sql.DriverManager;
 public class JdbcMsSql {
 
     public static Connection connObj;
-    public static String JDBC_URL = "jdbc:sqlserver://localhost:1433;databaseName=tutorialDb;integratedSecurity=true";
+//    public static String JDBC_URL = "jdbc:sqlserver://localhost:1433;databaseName=tutorialDb;integratedSecurity=true";
+    //public static String JDBC_URL = "jdbc:postgresql://localhost:5432;databaseName=testdb?user=postgres&password=admin";
+    public static String JDBC_URL = "jdbc:postgresql://localhost:5432/testdb?user=postgres&password=admin";
+
 
     public static void getDbConnection() {
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            connObj = DriverManager.getConnection(JDBC_URL);
-            if(connObj != null) {
-                DatabaseMetaData metaObj = (DatabaseMetaData) connObj.getMetaData();
-                System.out.println("Driver Name?= " + metaObj.getDriverName() + ", Driver Version?= " + metaObj.getDriverVersion() + ", Product Name?= " + metaObj.getDatabaseProductName() + ", Product Version?= " + metaObj.getDatabaseProductVersion());
-                CallableStatement cstmt = null;
-            }
-        } catch(Exception sqlException) {
-            sqlException.printStackTrace();
-        }
+        DatabaseManager db = DatabaseManager.getInstance();
+        db.setDbType(new DBTypeConstPosgree());
+        db.setConnection("testdb","postgres","admin");
     }
 
     public static void main(String[] args) {
