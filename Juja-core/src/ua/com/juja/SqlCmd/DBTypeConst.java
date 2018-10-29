@@ -48,10 +48,10 @@ final class DBTypeConstPosgree extends DBTypeConst {
 final class DBTypeConstMssql extends DBTypeConst {
     public DBTypeConstMssql(){
         super(
-            "sqlserver",
             "10.1.32.56",
             "1433",
-            "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+            "sqlserver"
         );
     }
 
@@ -60,7 +60,7 @@ final class DBTypeConstMssql extends DBTypeConst {
         return String.format("jdbc:%1$s://%2$s:%3$s"
                         +";databaseName=%4$s"
                         +";integratedSecurity=true",
-                DriverClassName,
+                DriverStringName,
                 ServerName,
                 ServerPort,
                 database,
