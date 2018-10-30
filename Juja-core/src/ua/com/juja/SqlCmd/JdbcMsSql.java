@@ -2,36 +2,62 @@ package ua.com.juja.SqlCmd;
 
 import ua.com.juja.SqlCmd.DdTypes.DBTypeConstMssql;
 
-import java.sql.Array;
-import java.sql.Connection;
 import java.util.Arrays;
 
 public class JdbcMsSql {
 
-    public static Connection connObj;
-//    public static String JDBC_URL = "jdbc:sqlserver://localhost:1433;databaseName=tutorialDb;integratedSecurity=true";
-    //public static String JDBC_URL = "jdbc:postgresql://localhost:5432;databaseName=testdb?user=postgres&password=admin";
-    public static String JDBC_URL = "jdbc:postgresql://localhost:5432/testdb?user=postgres&password=admin";
-
-    public static void getDbConnection() {
-        //DatabaseManager db = DatabaseManager.getInstance(new DBTypeConstPosgree());
-        //db.setConnection("testdb","postgres","admin");
+    public static void main(String[] args) {
 
         DatabaseManager db = DatabaseManager.getInstance(new DBTypeConstMssql());
         db.setConnection("ImportProcessing","postgres","admin");
 
         System.out.println(db.getConnection().toString());
-        String tableName = "aProject";
-        System.out.println(db.tableExist(tableName));
-        String[][] rowSet = db.tableFind(tableName);
-        if (rowSet != null) {
-            for (String[] row: rowSet) {
-                System.out.println(Arrays.toString(row));
-            }
-        }
+
+        showResult(db.Tables() ,
+                "Tables" ) ;
+
+        showResult(db.tableCreate(new String[]{"myTable1","r1","r2"}) ,
+                "tableCreate" ) ;
+
+        showResult(db.Insert(new String[]{"myTable1","r1","0","r2","11 22"}),
+                "Insert");
+
+        showResult(db.Insert(new String[]{"myTable1","r1","1","r2","4567"}),
+                "Insert");
+
+        showResult(db.tableFind("myTable1"),
+                "Find");
+
+        showResult(db.Update(new String[]{"myTable1","r1","0","r2","1234"}),
+                "Update");
+
+        showResult(db.tableFind("myTable1"),
+                "Find");
+
+        showResult(db.Delete(new String[]{"myTable1","r2","1234"}),
+                "Delete");
+
+        showResult(db.tableFind("myTable1"),
+                "Find");
+
+        showResult(db.Clear("myTable1"),
+                "Clear");
+
+        showResult(db.tableFind("myTable1"),
+                "Find");
+
+        showResult(db.Drop("myTable1"),
+                "Drop");
+
+        System.out.println("Ok!");
     }
 
-    public static void main(String[] args) {
-        getDbConnection();
+    static void showResult(Object[][] rowSet, String command){
+        System.out.println(command);
+        if (rowSet != null) {
+            for (Object[] row: rowSet) {
+                System.out.println("\t" + Arrays.toString(row));
+            }
+        }
     }
 }
