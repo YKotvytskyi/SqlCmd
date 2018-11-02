@@ -13,41 +13,66 @@ public class JdbcMsSql {
 
         System.out.println(db.getConnection().toString());
 
-        showResult(db.Tables() ,
-                "Tables" ) ;
+        System.out.println( db.Tables().toString());
+        System.out.println( db.tableCreate(new String[]{"myTable1","r1","r2"})
+                .toString()
+                + "\n tableCreate\n---\n\n");
 
-        showResult(db.tableCreate(new String[]{"myTable1","r1","r2"}) ,
-                "tableCreate" ) ;
+        System.out.println(db.Insert(new String[]{"myTable1","r1","0","r2","11 22"}).toString()
+                + "\nInsert\n---\n\n");
 
-        showResult(db.Insert(new String[]{"myTable1","r1","0","r2","11 22"}),
-                "Insert");
+        System.out.println(db.Find("myTable1").toString()
+                + "\nFind\n---\n\n");
 
-        showResult(db.Insert(new String[]{"myTable1","r1","1","r2","4567"}),
-                "Insert");
 
-        showResult(db.tableFind("myTable1"),
-                "Find");
+        System.out.println(db.Drop("myTable1").toString()
+                +"\nDrop\n---\n\n");
 
-        showResult(db.Update(new String[]{"myTable1","r1","0","r2","1234"}),
-                "Update");
 
-        showResult(db.tableFind("myTable1"),
-                "Find");
+//
+//        showResult(db.Insert(new String[]{"myTable1","r1","1","r2","4567"}),
+//                "Insert");
+//
+//        showResult(db.Find("myTable1"),
+//                "Find");
 
-        showResult(db.Delete(new String[]{"myTable1","r2","1234"}),
-                "Delete");
 
-        showResult(db.tableFind("myTable1"),
-                "Find");
 
-        showResult(db.Clear("myTable1"),
-                "Clear");
-
-        showResult(db.tableFind("myTable1"),
-                "Find");
-
-        showResult(db.Drop("myTable1"),
-                "Drop");
+//        showResult(db.Tables() ,
+//                "Tables" ) ;
+//
+//        showResult(db.tableCreate(new String[]{"myTable1","r1","r2"}) ,
+//                "tableCreate" ) ;
+//
+//        showResult(db.Insert(new String[]{"myTable1","r1","0","r2","11 22"}),
+//                "Insert");
+//
+//        showResult(db.Insert(new String[]{"myTable1","r1","1","r2","4567"}),
+//                "Insert");
+//
+//        showResult(db.Find("myTable1"),
+//                "Find");
+//
+//        showResult(db.Update(new String[]{"myTable1","r1","0","r2","1234"}),
+//                "Update");
+//
+//        showResult(db.Find("myTable1"),
+//                "Find");
+//
+//        showResult(db.Delete(new String[]{"myTable1","r2","1234"}),
+//                "Delete");
+//
+//        showResult(db.Find("myTable1"),
+//                "Find");
+//
+//        showResult(db.Clear("myTable1"),
+//                "Clear");
+//
+//        showResult(db.Find("myTable1"),
+//                "Find");
+//
+//        showResult(db.Drop("myTable1"),
+//                "Drop");
 
         System.out.println("Ok!");
     }

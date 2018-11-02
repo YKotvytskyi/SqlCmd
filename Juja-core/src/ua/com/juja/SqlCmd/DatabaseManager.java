@@ -1,5 +1,6 @@
 package ua.com.juja.SqlCmd;
 
+import com.sun.org.apache.xalan.internal.xsltc.dom.SimpleResultTreeImpl;
 import ua.com.juja.SqlCmd.DdTypes.DBTypeConst;
 import ua.com.juja.SqlCmd.DdTypes.DBTypeConstPosgree;
 
@@ -58,19 +59,19 @@ public class DatabaseManager {
         return dbType.getConnectionString(database, username, password);
     }
 
-    public Object[][] Tables(){
+    public Table Tables(){
         return executeQuery(dbCommand.Tables);
     }
 
-    public Object[][] create(){
-        return executeQuery(dbCommand.Tables);
+    public Table create(){
+        return executeUpdate(dbCommand.Create);
     }
 
-    public Object[][] drop(){
-        return executeQuery(dbCommand.Drop);
+    public Table drop(){
+        return executeUpdate(dbCommand.Drop);
     }
 
-    public Object[][] tableFind(String tableName){
+    public Table Find(String tableName){
         if (!tableExist(tableName))
         {
             return null;
@@ -78,54 +79,49 @@ public class DatabaseManager {
         return getRowsFromTable(tableName);
     }
 
-    public Object[][] tableCreate(String[] param){
-        return executeQuery(dbCommand.Create, param);
+    public Table tableCreate(String[] param){
+        return executeUpdate(dbCommand.Create, param);
     }
 
-    public Object[][] Drop(String tableName){
-        return executeQuery(dbCommand.Drop, new Object[]{tableName});
+    public Table Drop(String tableName){
+        return executeUpdate(dbCommand.Drop, new Object[]{tableName});
     }
 
-    public Object[][] Insert(String[] param){
-        return executeQuery(dbCommand.Insert, param);
+    public Table Insert(String[] param){
+        return executeUpdate(dbCommand.Insert, param);
     }
 
-    public Object[][] Clear(String tableName){
-        return executeQuery(dbCommand.Clear, new Object[] {tableName});
+    public Table Clear(String tableName){
+        return executeUpdate(dbCommand.Clear, new Object[] {tableName});
     }
 
-    public Object[][] Update(String[] param){
-        return executeQuery(dbCommand.Update, param);
+    public Table Update(String[] param){
+        return executeUpdate(dbCommand.Update, param);
     }
 
-    public Object[][] Delete(String[] param){
-        return executeQuery(dbCommand.Delete, param);
+    public Table Delete(String[] param){
+        return executeUpdate(dbCommand.Delete, param);
     }
 
-    private boolean tableExist(String tableName){
-        Object[][] result = executeQuery(dbCommand.Table_Exist,new Object[] {tableName});
-        if (result.length > 0 ){
-            return true;
+    private boolean tableExist(String tableName){ //TODO rewrite
+
+        PreparedStatement stmt = null;
+        try{
+            stmt = ConnObj.prepareStatement(dbType.Select());
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next())
+                return true;
+        } catch(Exception sqlException) {
+            sqlException.printStackTrace();
         }
         return false;
     }
 
-    private Object[][] getRowsFromTable(String tableName){
-        Object[][] result = null;
+    private Table getRowsFromTable(String tableName){
         return  executeQuery(dbCommand.Find, new Object[] {tableName});
     }
 
-    private Object[][] shrinkArray(Object[][] array, int rowsCount){
-        if (array.length == 0)
-            return  array;
-        Object rightRowsResult[][] = new Object[rowsCount][array[0].length];
-        System.arraycopy(array,0,rightRowsResult,0,rowsCount);
-        return rightRowsResult;
-    }
-
-    private Object[][] executeQuery(dbCommand sqlCmdType,Object[] param ){
-
-        Object[][] result = null;
+    private Table executeQuery(dbCommand sqlCmdType, Object[] param ){
         try {
             PreparedStatement stmt = null;
             switch (sqlCmdType) {
@@ -135,74 +131,94 @@ public class DatabaseManager {
                 case Find :
                     stmt = ConnObj.prepareStatement(dbType.Select(param[0].toString()));
                     break;
-                case Table_Exist :
-                    stmt = ConnObj.prepareStatement(dbType.checkTableExist());
-                    stmt.setString(1, param[0].toString());
-                    break;
+            }
+            getDataFromDB(stmt.executeQuery(), stmt.getMetaData());
+            return new Table(Rows, Columns);
+        } catch(Exception sqlException) {
+            sqlException.printStackTrace();
+        }
+        return null;
+    }
+
+    private Table executeQuery(dbCommand sqlCmdType){
+        return executeQuery(sqlCmdType, null);
+    }
+
+    private Table executeUpdate(dbCommand sqlCmdType, Object[] param ){
+
+        try {
+            PreparedStatement stmt = null;
+            switch (sqlCmdType) {
                 case Create:
                     String[] createParam = new String[param.length -1 ];
                     System.arraycopy(param, 1, createParam,0,param.length - 1);
                     stmt = ConnObj.prepareStatement(dbType.Create((String[]) param));
-                    return new Object[][] {{stmt.executeUpdate() }};
+                    break;
                 case Insert:
                     stmt = ConnObj.prepareStatement(dbType.Insert((String[]) param));
                     for (int i = 0; i < param.length/2; i++){
                         stmt.setString(i + 1, param[i*2 + 2].toString());
                     }
-                    return value2Array(stmt.executeUpdate());
+                    break;
                 case Drop:
                     stmt = ConnObj.prepareStatement(dbType.Drop(param[0].toString()));
-                    return value2Array(stmt.executeUpdate());
+                    break;
                 case Clear:
                     stmt = ConnObj.prepareStatement(dbType.Clear(param[0].toString()));
-                    return value2Array(stmt.executeUpdate());
+                    break;
                 case Update:
                     stmt = ConnObj.prepareStatement(dbType.Update((String[]) param));
                     stmt.setString(1, param[4].toString());
                     stmt.setString(2, param[2].toString());
-                    return value2Array(stmt.executeUpdate());
+                    break;
                 case Delete:
                     stmt = ConnObj.prepareStatement(dbType.Delete((String[]) param));
                     stmt.setString(1, param[2].toString());
-                    return value2Array(stmt.executeUpdate());
             }
-            return recordsToArray(stmt.executeQuery());
+            return new Table(stmt.executeUpdate());
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
         }
-        return result;
+        return new Table();
     }
 
-    private Object[][] value2Array(Object val){
-        return new Object[][] {{val}};
+    private Table executeUpdate(dbCommand sqlCmdType){
+        return executeUpdate(sqlCmdType, null);
     }
 
-    private Object[][] executeQuery(dbCommand sqlCmdType){
-        return executeQuery(sqlCmdType, null);
-    }
+    private String[] Columns;
+    private Object[][] Rows;
 
-    private Object[][] recordsToArray(ResultSet rs){
-        final int maxRow = 1000;
-        Object[][] result = null;
-        int rowNumber = 0;
+    private void getDataFromDB(ResultSet rs, ResultSetMetaData rsmd){
+        final int maxRow = 10000;
         try{
-            ResultSetMetaData rsmd = rs.getMetaData();
+
             int columnCount = rsmd.getColumnCount();
-            result = new Object[maxRow][rsmd.getColumnCount()];
+
+            Columns = new String[rsmd.getColumnCount()];
+            for(int i = 0; i < rsmd.getColumnCount(); i++){
+                Columns[i] = rsmd.getColumnName(i+1);
+            }
+
+
+            Object[][] rows = new Object[maxRow][columnCount];
+            int rowNumber = 0;
             while (rs.next() && (rowNumber < maxRow)) {
                 for (int i  = 0 ; i < columnCount; i++ ) {
-                    result[rowNumber][i] = rs.getString(i+1);
+                    rows[rowNumber][i] = rs.getString(i+1);
                 }
                 rowNumber++;
             }
+            Rows = new Object[rowNumber][columnCount];
+
+            System.arraycopy(rows,0,Rows,0, rowNumber);
         } catch(Exception sqlException) {
-        sqlException.printStackTrace();
+            sqlException.printStackTrace();
         }
-        return shrinkArray(result,rowNumber);
     }
 
     enum dbCommand {
-        Find, Table_Exist, Tables,
+        Find, Tables,
         Create, Drop, Insert, Clear, Update, Delete
 
     }
