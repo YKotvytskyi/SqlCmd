@@ -1,6 +1,7 @@
 package ua.com.juja.SqlCmd;
 
 import ua.com.juja.SqlCmd.DdTypes.DBTypeConstMssql;
+import ua.com.juja.SqlCmd.DdTypes.DBTypeConstPosgree;
 
 import java.util.Arrays;
 
@@ -8,12 +9,14 @@ public class JdbcMsSql {
 
     public static void main(String[] args) {
 
-        DatabaseManager db = DatabaseManager.getInstance(new DBTypeConstMssql());
-        db.setConnection("ImportProcessing","postgres","admin");
+        //DatabaseManager db = DatabaseManager.getInstance(new DBTypeConstMssql());
+        DatabaseManager db = DatabaseManager.getInstance(new DBTypeConstPosgree());
+        db.setConnection("testdb","postgres","admin");
 
         System.out.println(db.getConnection().toString());
 
         System.out.println( db.Tables().toString());
+
         System.out.println( db.tableCreate(new String[]{"myTable1","r1","r2"})
                 .toString()
                 + "\n tableCreate\n---\n\n");

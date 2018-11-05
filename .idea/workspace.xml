@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fa0c6fe1-29cb-4a2a-a797-6060dcec7f9a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Juja-core/juja-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/juja-core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConst.java" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstMssql.java" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstMssql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstPosgree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstPosgree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/JdbcMsSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/JdbcMsSql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Juja$Main.ic" NAME="Main Coverage Results" MODIFIED="1525976113403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ua.com.juja.core.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.45650795">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DatabaseManager.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="142">
+                  <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#697#698#0" expanded="true" />
+                    <element signature="e#728#729#0" expanded="true" />
+                    <element signature="e#4475#4476#0" expanded="true" />
+                    <element signature="e#4528#4529#0" expanded="true" />
+                    <element signature="e#6261#6262#0" expanded="true" />
+                    <element signature="e#6315#6316#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DatabaseManagerTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="23">
+                  <caret line="26" column="36" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="36" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1243#1244#0" expanded="true" />
+                    <element signature="e#1269#1270#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DatabaseManager.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-359">
+                  <caret line="58" selection-start-line="58" selection-end-line="58" />
+                  <folding>
+                    <element signature="method#setDbType#0;class#DatabaseManager#0" />
+                    <element signature="method#getConnectionString#0;class#DatabaseManager#0" />
+                    <element signature="e#1977#1978#0" expanded="true" />
+                    <element signature="e#2030#2031#0" expanded="true" />
+                    <element signature="e#2058#2059#0" expanded="true" />
+                    <element signature="e#2112#2113#0" expanded="true" />
+                    <element signature="e#2138#2139#0" expanded="true" />
+                    <element signature="e#2190#2191#0" expanded="true" />
+                    <element signature="method#Find#0;class#DatabaseManager#0" />
+                    <element signature="e#2410#2411#0" expanded="true" />
+                    <element signature="e#2471#2472#0" expanded="true" />
+                    <element signature="e#2513#2514#0" expanded="true" />
+                    <element signature="e#2590#2591#0" expanded="true" />
+                    <element signature="e#2632#2633#0" expanded="true" />
+                    <element signature="e#2693#2694#0" expanded="true" />
+                    <element signature="e#2736#2737#0" expanded="true" />
+                    <element signature="e#2815#2816#0" expanded="true" />
+                    <element signature="e#2857#2858#0" expanded="true" />
+                    <element signature="e#2918#2919#0" expanded="true" />
+                    <element signature="e#2960#2961#0" expanded="true" />
+                    <element signature="e#3021#3022#0" expanded="true" />
+                    <element signature="method#tableExist#0;class#DatabaseManager#0" />
+                    <element signature="e#3485#3486#0" expanded="true" />
+                    <element signature="e#3563#3564#0" expanded="true" />
+                    <element signature="method#executeQuery#0;class#DatabaseManager#0" />
+                    <element signature="e#4384#4385#0" expanded="true" />
+                    <element signature="e#4437#4438#0" expanded="true" />
+                    <element signature="method#executeUpdate#0;class#DatabaseManager#0" />
+                    <element signature="e#6246#6247#0" expanded="true" />
+                    <element signature="e#6300#6301#0" expanded="true" />
+                    <element signature="method#getDataFromDB#0;class#DatabaseManager#0" />
+                    <element signature="class#dbCommand#0;class#DatabaseManager#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="JdbcMsSql.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/JdbcMsSql.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="520">
+                  <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="57" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find />
+      <find>algorithm</find>
+      <find>3</find>
+      <find>DriverManager</find>
+      <find>DBTypeConst</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Liner.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Test.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/Reference/Test.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/Reference/BigIntegerUtils.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/Consts.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DBTypeConst.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstPosgree.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstMssql.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/JdbcMsSql.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConst.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
+              <item name="DdTypes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="ua.com.juja.SqlCmd" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="C:/Java/jdk1.8.0_161/jre/lib/sqldrv/postgresql-42.2.5.jar!/" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.DatabaseManagerTest">
+    <configuration name="BigIntegerUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Reference.BigIntegerUtils" />
+      <module name="Juja-core" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Reference.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="JdbcMsSql" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.JdbcMsSql" />
+      <module name="Juja-core" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.juja.SqlCmd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="DatabaseManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Juja-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.juja.SqlCmd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ua.com.juja.SqlCmd" />
+      <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.DatabaseManagerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DatabaseManagerTest.testDropTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Juja-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.juja.SqlCmd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ua.com.juja.SqlCmd" />
+      <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.DatabaseManagerTest" />
+      <option name="METHOD_NAME" value="testDropTable" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DatabaseManagerTest.testGetAllTableNames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Juja-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.juja.SqlCmd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ua.com.juja.SqlCmd" />
+      <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.DatabaseManagerTest" />
+      <option name="METHOD_NAME" value="testGetAllTableNames" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Application.BigIntegerUtils" />
+      <item itemvalue="Application.JdbcMsSql" />
+      <item itemvalue="JUnit.DatabaseManagerTest.testGetAllTableNames" />
+      <item itemvalue="JUnit.DatabaseManagerTest.testDropTable" />
+      <item itemvalue="JUnit.DatabaseManagerTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DatabaseManagerTest" />
+        <item itemvalue="JUnit.DatabaseManagerTest.testDropTable" />
+        <item itemvalue="JUnit.DatabaseManagerTest.testGetAllTableNames" />
+        <item itemvalue="Application.JdbcMsSql" />
+        <item itemvalue="Application.BigIntegerUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa0c6fe1-29cb-4a2a-a797-6060dcec7f9a" name="Default" comment="" />
+      <created>1524159984979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524159984979</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first connection postgree;">
+      <created>1540656248384</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1540656248385</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first connection postgree;">
+      <created>1540803449718</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540803449718</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first connection postgree with folder setting">
+      <created>1540806009933</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540806009933</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 30m 19s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 31m 37s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 38m 36s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 39m 03s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 39m 30s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest_testDropTable - 2018.11.04 at 18h 41m 19s.xml">
+      <configuration name="DatabaseManagerTest.testDropTable" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 41m 30s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 42m 21s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 45m 47s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.04 at 18h 46m 30s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32837406" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.32897604" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5594059" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44989106" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.17864923" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16044776" />
+      <window_info id="Learn" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37472767" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32875723" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Juja-core" />
+    </ignored-roots>
+    <MESSAGE value="first connection postgree;" />
+    <MESSAGE value="first connection postgree with folder setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="first connection postgree with folder setting" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="22" />
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>Arrays.toString(arr)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>((PgPreparedStatement) stmt).preparedQuery</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>org.postgresql.jdbc.PgPreparedStatement</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>stmt</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result.equals(&quot;0&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result.charAt(0) == '0'</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result.charAt(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result.charAt(1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(result.charAt(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(result == &quot;0&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result.value</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Liner.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Test.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Test.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Liner.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Test.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Test.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="jar://C:/Java/jdk1.8.0_161/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/InsertionSorter.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Liner.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Test.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/Reference/BigIntegerUtils.java" />
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DBTypeConst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstMssql.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConstPosgree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_161/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="263" selection-start-line="263" selection-end-line="263" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/test/Juja-core/ua/com/juja/SqlCmd/DatabaseManagerTest.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DdTypes/DBTypeConst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/JdbcMsSql.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-359">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="method#setDbType#0;class#DatabaseManager#0" />
+            <element signature="method#getConnectionString#0;class#DatabaseManager#0" />
+            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2138#2139#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+            <element signature="method#Find#0;class#DatabaseManager#0" />
+            <element signature="e#2410#2411#0" expanded="true" />
+            <element signature="e#2471#2472#0" expanded="true" />
+            <element signature="e#2513#2514#0" expanded="true" />
+            <element signature="e#2590#2591#0" expanded="true" />
+            <element signature="e#2632#2633#0" expanded="true" />
+            <element signature="e#2693#2694#0" expanded="true" />
+            <element signature="e#2736#2737#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+            <element signature="e#2918#2919#0" expanded="true" />
+            <element signature="e#2960#2961#0" expanded="true" />
+            <element signature="e#3021#3022#0" expanded="true" />
+            <element signature="method#tableExist#0;class#DatabaseManager#0" />
+            <element signature="e#3485#3486#0" expanded="true" />
+            <element signature="e#3563#3564#0" expanded="true" />
+            <element signature="method#executeQuery#0;class#DatabaseManager#0" />
+            <element signature="e#4384#4385#0" expanded="true" />
+            <element signature="e#4437#4438#0" expanded="true" />
+            <element signature="method#executeUpdate#0;class#DatabaseManager#0" />
+            <element signature="e#6246#6247#0" expanded="true" />
+            <element signature="e#6300#6301#0" expanded="true" />
+            <element signature="method#getDataFromDB#0;class#DatabaseManager#0" />
+            <element signature="class#dbCommand#0;class#DatabaseManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Juja</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>postgresql-42.2.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

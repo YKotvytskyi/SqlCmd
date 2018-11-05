@@ -1,27 +1,39 @@
 package ua.com.juja.SqlCmd.DdTypes;
 
+import org.omg.PortableServer.ServantRetentionPolicyValue;
+
 public abstract class DBTypeConst {
     public final String ServerName;
     public final String ServerPort;
     public final String DriverClassName;
     public final String DriverStringName;
+    public final String Schema;
+
 
     abstract public String getConnectionString(String database, String username, String password);
 
     public DBTypeConst(String serverName, String serverPort,
-                       String driverClassName, String driverStringName) {
+                       String driverClassName, String driverStringName, String schema) {
         ServerName = serverName;
         ServerPort = serverPort;
         DriverClassName = driverClassName;
         DriverStringName = driverStringName;
+        Schema = schema;
     }
 
     public String Select(){
-        return "SELECT Distinct TABLE_NAME FROM information_schema.TABLES";
+        return String.format(
+                "SELECT Distinct TABLE_NAME FROM information_schema.TABLES"
+                +" WHERE table_schema = '%s'",
+                Schema
+        );
     }
 
     public String checkTableExist(){
-        return "SELECT Distinct TABLE_NAME FROM information_schema.TABLES where TABLE_NAME = ?";
+        return String.format(
+                "SELECT Distinct TABLE_NAME FROM information_schema.TABLES where TABLE_NAME = %s.?",
+                Schema
+                );
     }
 
     public String Select(String tableName) {
@@ -29,9 +41,12 @@ public abstract class DBTypeConst {
     }
 
     public String Create(String[] param) {
-        String sql = "CREATE TABLE " + param[0] + " (";
+        String sql = String.format(
+                "CREATE TABLE %s." + param[0] + " (",
+                Schema
+            );
         for (int i = 1; i < param.length; i++){
-            sql  += " " + param[i] + " nVarChar(150),";
+            sql  += " " + param[i] + " VarChar(150),";
         }
         sql = sql.substring(0,sql.length()-1) + ")";
         return  sql;
@@ -42,14 +57,14 @@ public abstract class DBTypeConst {
     }
 
     public String Insert(String[] param){
-        String tableName = param[0];
         String fields = "";
         String values = "";
         for (int i = 0; i < (param.length-1)/2; i++ ){
             fields += param[i*2 + 1] + ",";
             values += "?,";
         }
-        return String.format("INSERT %1s (%2s) values(%3s)",
+        return String.format("INSERT INTO %s.%s (%s) values(%s)",
+                Schema,
                 param[0],
                 fields.substring(0, fields.length() - 1),
                 values.substring(0,values.length() -1)
@@ -57,11 +72,16 @@ public abstract class DBTypeConst {
     }
 
     public String Clear(String tableName){
-        return "DELETE " + tableName;
+        return String.format(
+                "DELETE %s.%s",
+                Schema,
+                tableName
+                );
     }
 
     public String Update(String[] param){
-        return String.format("UPDATE %1s SET %2s = ? WHERE %3s = ?",
+        return String.format("UPDATE %s.%s SET %s = ? WHERE %s = ?",
+                Schema,
                 param[0],
                 param[3],
                 param[1]
@@ -69,7 +89,8 @@ public abstract class DBTypeConst {
     }
 
     public String Delete(String[] param){
-        return String.format("DELETE %1s WHERE %2s = ?",
+        return String.format("DELETE %s.%s WHERE %s = ?",
+                Schema,
                 param[0],
                 param[1]
         );

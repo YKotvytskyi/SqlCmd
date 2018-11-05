@@ -7,7 +7,8 @@ public final class DBTypeConstPosgree extends DBTypeConst {
                 "localhost",
                 "5432",
                 "org.postgresql.Driver",
-                "postgresql"
+                "postgresql",
+                "public"
         );
     }
 

@@ -1,6 +1,5 @@
 package ua.com.juja.SqlCmd;
 
-import com.sun.org.apache.xalan.internal.xsltc.dom.SimpleResultTreeImpl;
 import ua.com.juja.SqlCmd.DdTypes.DBTypeConst;
 import ua.com.juja.SqlCmd.DdTypes.DBTypeConstPosgree;
 
@@ -35,21 +34,29 @@ public class DatabaseManager {
 
     public Connection getConnection() {return ConnObj;}
 
+    public void Close(){
+        try{
+            if(ConnObj != null) {
+                ConnObj.close();
+            }
+        } catch(Exception sqlException) {
+            sqlException.printStackTrace();
+        }
+
+    }
+
     public void setConnection(String database, String username, String password) {
         String JDBC_URL = getConnectionString(database,username,password);
         try {
             Class.forName(dbType.DriverClassName);
             ConnObj = DriverManager.getConnection(JDBC_URL);
-            if(ConnObj != null) {
-                DatabaseMetaData metaObj = (DatabaseMetaData) ConnObj.getMetaData();
-                System.out.println("Driver Name?= " + metaObj.getDriverName() + ", Driver Version?= "
-                        + metaObj.getDriverVersion() + ", Product Name?= "
-                        + metaObj.getDatabaseProductName()
-                        + ", Product Version?= " + metaObj.getDatabaseProductVersion());
-                CallableStatement cstmt = null;
-                Statement stmt = ConnObj.createStatement();
-
-            }
+//            if(ConnObj != null) {
+//                DatabaseMetaData metaObj = (DatabaseMetaData) ConnObj.getMetaData();
+//                System.out.println("Driver Name?= " + metaObj.getDriverName() + ", Driver Version?= "
+//                        + metaObj.getDriverVersion() + ", Product Name?= "
+//                        + metaObj.getDatabaseProductName()
+//                        + ", Product Version?= " + metaObj.getDatabaseProductVersion());
+//            }
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
         }
@@ -136,8 +143,8 @@ public class DatabaseManager {
             return new Table(Rows, Columns);
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
+            return new Table(new Object[][] {{sqlException.getMessage()}}, new  String[]{"Exception"});
         }
-        return null;
     }
 
     private Table executeQuery(dbCommand sqlCmdType){
@@ -178,8 +185,8 @@ public class DatabaseManager {
             return new Table(stmt.executeUpdate());
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
+            return new Table(new Object[][] {{sqlException.getMessage()}}, new  String[]{"Exception"});
         }
-        return new Table();
     }
 
     private Table executeUpdate(dbCommand sqlCmdType){

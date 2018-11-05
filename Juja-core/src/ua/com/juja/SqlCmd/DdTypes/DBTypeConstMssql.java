@@ -6,7 +6,8 @@ public final class DBTypeConstMssql extends DBTypeConst {
                 "10.1.32.56",
                 "1433",
                 "com.microsoft.sqlserver.jdbc.SQLServerDriver",
-                "sqlserver"
+                "sqlserver",
+                "public"
         );
     }
 
