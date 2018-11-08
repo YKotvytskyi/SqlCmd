@@ -1,18 +1,18 @@
-package ua.com.juja.SqlCmd;
+package ua.com.juja.SqlCmd.model;
 
-import ua.com.juja.SqlCmd.DdTypes.DBTypeConst;
-import ua.com.juja.SqlCmd.DdTypes.DBTypeConstPosgree;
+import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConst;
+import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConstPosgree;
 
 import java.sql.*;
 
 
-public class DatabaseManager {
+public class JDBCDatabaseManager implements DatabaseManager {
 
-    private static DatabaseManager instance = new DatabaseManager();
+    private static JDBCDatabaseManager instance = new JDBCDatabaseManager();
 
     private static DBTypeConst dbType = new DBTypeConstPosgree();
 
-    private DatabaseManager(){}
+    private JDBCDatabaseManager(){}
 
     public void setDbType(DBTypeConst dbType){
         if (this.dbType.getClass() != dbType.getClass()){
@@ -23,17 +23,18 @@ public class DatabaseManager {
 
     public static Connection ConnObj;
 
-    public static DatabaseManager getInstance(){
+    public static JDBCDatabaseManager getInstance(){
         return instance;
     }
 
-    public static DatabaseManager getInstance(DBTypeConst dbType){
+    public static JDBCDatabaseManager getInstance(DBTypeConst dbType){
         instance.setDbType(dbType);
         return instance;
     }
 
     public Connection getConnection() {return ConnObj;}
 
+    @Override
     public void Close(){
         try{
             if(ConnObj != null) {
@@ -42,9 +43,9 @@ public class DatabaseManager {
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
         }
-
     }
 
+    @Override
     public void setConnection(String database, String username, String password) {
         String JDBC_URL = getConnectionString(database,username,password);
         try {
@@ -66,46 +67,42 @@ public class DatabaseManager {
         return dbType.getConnectionString(database, username, password);
     }
 
+    @Override
     public Table Tables(){
         return executeQuery(dbCommand.Tables);
     }
 
-    public Table create(){
-        return executeUpdate(dbCommand.Create);
-    }
-
-    public Table drop(){
-        return executeUpdate(dbCommand.Drop);
-    }
-
-    public Table Find(String tableName){
-        if (!tableExist(tableName))
-        {
-            return null;
-        }
-        return getRowsFromTable(tableName);
-    }
-
-    public Table tableCreate(String[] param){
-        return executeUpdate(dbCommand.Create, param);
-    }
-
-    public Table Drop(String tableName){
-        return executeUpdate(dbCommand.Drop, new Object[]{tableName});
-    }
-
-    public Table Insert(String[] param){
-        return executeUpdate(dbCommand.Insert, param);
-    }
-
+    @Override
     public Table Clear(String tableName){
         return executeUpdate(dbCommand.Clear, new Object[] {tableName});
     }
 
+    @Override
+    public Table Drop(String tableName){
+        return executeUpdate(dbCommand.Drop, new String[] {tableName});
+    }
+
+    @Override
+    public Table Create(String[] param){
+        return executeUpdate(dbCommand.Create, param);
+    }
+
+    @Override
+    public Table TableExist(String tableName){
+        return  executeQuery(dbCommand.TableExist, new Object[] {tableName});
+    }
+
+    @Override
+    public Table Insert(String[] param){
+        return executeUpdate(dbCommand.Insert, param);
+    }
+
+    @Override
     public Table Update(String[] param){
         return executeUpdate(dbCommand.Update, param);
     }
 
+    @Override
     public Table Delete(String[] param){
         return executeUpdate(dbCommand.Delete, param);
     }
@@ -114,7 +111,7 @@ public class DatabaseManager {
 
         PreparedStatement stmt = null;
         try{
-            stmt = ConnObj.prepareStatement(dbType.Select());
+            stmt = ConnObj.prepareStatement(dbType.List());
             ResultSet rs = stmt.executeQuery();
             if (rs.next())
                 return true;
@@ -124,7 +121,8 @@ public class DatabaseManager {
         return false;
     }
 
-    private Table getRowsFromTable(String tableName){
+    @Override
+    public Table Find(String tableName){
         return  executeQuery(dbCommand.Find, new Object[] {tableName});
     }
 
@@ -133,17 +131,20 @@ public class DatabaseManager {
             PreparedStatement stmt = null;
             switch (sqlCmdType) {
                 case Tables:
-                    stmt = ConnObj.prepareStatement(dbType.Select());
+                    stmt = ConnObj.prepareStatement(dbType.List());
                     break;
                 case Find :
                     stmt = ConnObj.prepareStatement(dbType.Select(param[0].toString()));
+                    break;
+                case TableExist:
+                    stmt = ConnObj.prepareStatement(dbType.TableExist(param[0].toString()));
                     break;
             }
             getDataFromDB(stmt.executeQuery(), stmt.getMetaData());
             return new Table(Rows, Columns);
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
-            return new Table(new Object[][] {{sqlException.getMessage()}}, new  String[]{"Exception"});
+            return new Table(sqlException.getMessage());
         }
     }
 
@@ -175,8 +176,12 @@ public class DatabaseManager {
                     break;
                 case Update:
                     stmt = ConnObj.prepareStatement(dbType.Update((String[]) param));
-                    stmt.setString(1, param[4].toString());
-                    stmt.setString(2, param[2].toString());
+                    int lastParamIndex = param.length  / 2;
+                    stmt.setString(lastParamIndex, param[2].toString());
+                    for (int i = 1; i < lastParamIndex; i++ ) {
+                        stmt.setString(i, param[ (i + 1) * 2 ].toString());
+                    }
+                    //stmt.setString(2, param[2].toString());
                     break;
                 case Delete:
                     stmt = ConnObj.prepareStatement(dbType.Delete((String[]) param));
@@ -184,8 +189,8 @@ public class DatabaseManager {
             }
             return new Table(stmt.executeUpdate());
         } catch(Exception sqlException) {
-            sqlException.printStackTrace();
-            return new Table(new Object[][] {{sqlException.getMessage()}}, new  String[]{"Exception"});
+            //sqlException.printStackTrace();
+            return new Table(sqlException.getMessage());
         }
     }
 
@@ -207,7 +212,6 @@ public class DatabaseManager {
                 Columns[i] = rsmd.getColumnName(i+1);
             }
 
-
             Object[][] rows = new Object[maxRow][columnCount];
             int rowNumber = 0;
             while (rs.next() && (rowNumber < maxRow)) {
@@ -226,8 +230,8 @@ public class DatabaseManager {
 
     enum dbCommand {
         Find, Tables,
-        Create, Drop, Insert, Clear, Update, Delete
-
+        Create, Drop, Insert, Clear, Update, Delete,
+        TableExist
     }
 
 }
