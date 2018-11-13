@@ -1,0 +1,32 @@
+Существующие команды:
+
+    list
+        Для получения списка всех таблиц базы, к которой подключились.
+    clear
+        clear|tableName
+        Удаляет содержимое таблицы 'tableName'
+    drop
+        drop|tableName
+        Удаляет таблицу 'tableName'
+    create
+        create|tableName|columnName1(|columnNameN))
+        Создает таблицу 'tableName' с указанными столбцами columnName1..columnNameN.
+    find
+        find|tableName
+        Для получения содержимого таблицы 'tableName'.
+    insert
+        insert|tableName|columnName1|value1(|columnNameN|valueN)
+        Добавляет строку в таблицу 'tableName' в поле 'fieldName' значение 'value'
+    update
+        update|tableName|columnName1|value1|columnName2|value2(|columnNameN|valueN))
+        обновить строку в таблице 'tableName'
+        где columnName1 равно value1
+        установить в 'columnNameN' значение 'valueN'
+    delete
+        delete|tableName|column|value
+        Из таблицы tableName удаляет строку
+        в которой столбец columnName равен value
+    help
+        Выводит список доступных команд на экран
+    exit
+        Закрывает подключение к источнику данных и выходит из программы
