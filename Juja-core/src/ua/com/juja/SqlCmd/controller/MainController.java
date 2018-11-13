@@ -4,6 +4,10 @@ import ua.com.juja.SqlCmd.model.DatabaseManager;
 import ua.com.juja.SqlCmd.model.Table;
 import ua.com.juja.SqlCmd.view.View;
 
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 
 public class MainController {
@@ -16,7 +20,8 @@ public class MainController {
     View view;
     DatabaseManager db;
 
-    public void run(){
+    public void run() {
+
         connectToDb();
         while (true){
             view.write("Введи команду (или help для помощи):");
@@ -25,16 +30,31 @@ public class MainController {
             String[] command = commandLine.split("\\|");
             String commandName = command[0];
             switch (commandName){
-                case "help" : doHelp();
+                case "help"     : doHelp();
                     break;
 
-                case "list" : doTables();
+                case "list"     : doTables();
                     break;
 
-                case "find" : doFind(command);
+                case "clear"    : doClear(command);
                     break;
 
-                case "insert" : doInsert(command);
+                case "drop"     : doDrop(command);
+                    break;
+
+                case "create"   : doCreate(command);
+                    break;
+
+                case "find"     : doFind(command);
+                    break;
+
+                case "insert"   : doInsert(command);
+                    break;
+
+                case "update"   : doUpdate(command);
+                    break;
+
+                case "delete"   : doDelete(command);
                     break;
 
                 case "exit" :
@@ -44,6 +64,45 @@ public class MainController {
                 default:
                     view.write("Несуществующая команда: " + commandName);
             }
+        }
+    }
+
+    private void doCreate(String[] command) {
+        try {
+            checkMinParam(command.length,3);
+            Table table = db.Create(
+                    Arrays.copyOfRange(command,1,command.length));
+            if (table.isError()) {
+                throw new RuntimeException(table.getMessage());
+            }
+            view.write(table.getHorizontalLine());
+            view.write(table.getColumnNames());
+            view.write(table.getHorizontalLine());
+            for(int i = 0; i < table.getLength(); i++){
+                view.write(table.PrintRow(i));
+            }
+            view.write(table.getHorizontalLine());
+        } catch (Exception e) {
+            printError(e);
+        }
+    }
+
+    private void doClear(String[] command) {
+        try {
+            checkExactParam(command.length,2);
+            Table table = db.Clear(command[1]);
+            if (table.isError()) {
+                throw new RuntimeException(table.getMessage());
+            }
+            view.write(table.getHorizontalLine());
+            view.write(table.getColumnNames());
+            view.write(table.getHorizontalLine());
+            for(int i = 0; i < table.getLength(); i++){
+                view.write(table.PrintRow(i));
+            }
+            view.write(table.getHorizontalLine());
+        } catch (Exception e) {
+            printError(e);
         }
     }
 
@@ -61,6 +120,123 @@ public class MainController {
             } catch (Exception e) {
                 printError(e);
             }
+        }
+    }
+
+    private void doDrop(String[] command) {
+        try {
+            checkExactParam(command.length,2);
+            Table table = db.Drop(command[1]);
+            if (table.isError()) {
+                throw new RuntimeException(table.getMessage());
+            }
+            view.write(table.getHorizontalLine());
+            view.write(table.getColumnNames());
+            view.write(table.getHorizontalLine());
+            for(int i = 0; i < table.getLength(); i++){
+                view.write(table.PrintRow(i));
+            }
+            view.write(table.getHorizontalLine());
+        } catch (Exception e) {
+            printError(e);
+        }
+    }
+
+    private void doFind(String[] command) {
+        try {
+            checkExactParam(command.length,2);
+            String tableName = command[1];
+            if (db.TableExist(tableName).getLength() > 0) {
+                Table table = db.Find(tableName);
+                view.write(table.getHorizontalLine());
+                view.write(table.getColumnNames());
+                view.write(table.getHorizontalLine());
+                for(int i = 0; i < table.getLength(); i++){
+                    view.write(table.PrintRow(i));
+                }
+                view.write(table.getHorizontalLine());
+            }
+            else {
+                view.write("Таблицы " + tableName + " не существует");
+                view.write(db.Tables().toString());
+            }
+        } catch (Exception e) {
+            printError(e);
+        }
+    }
+
+    private void doInsert(String[] command) {
+        try {
+            checkMinParam(command.length,3);
+            Table table = db.Insert(
+                    Arrays.copyOfRange(command,1,command.length));
+            if (table.isError()) {
+                throw new RuntimeException(table.getMessage());
+            }
+            view.write(table.getHorizontalLine());
+            view.write(table.getColumnNames());
+            view.write(table.getHorizontalLine());
+            for(int i = 0; i < table.getLength(); i++){
+                view.write(table.PrintRow(i));
+            }
+            view.write(table.getHorizontalLine());
+        } catch (Exception e) {
+            printError(e);
+        }
+    }
+
+    private void doUpdate(String[] command) {
+        try {
+            checkMinParam(command.length,6);
+            Table table = db.Update(
+                    Arrays.copyOfRange(command,1,command.length));
+            if (table.isError()) {
+                throw new RuntimeException(table.getMessage());
+            }
+            view.write(table.getHorizontalLine());
+            view.write(table.getColumnNames());
+            view.write(table.getHorizontalLine());
+            for(int i = 0; i < table.getLength(); i++){
+                view.write(table.PrintRow(i));
+            }
+            view.write(table.getHorizontalLine());
+        } catch (Exception e) {
+            printError(e);
+        }
+    }
+
+    private void doDelete(String[] command) {
+        try {
+            checkExactParam(command.length,4);
+            Table table = db.Delete(
+                    Arrays.copyOfRange(command,1,command.length));
+            if (table.isError()) {
+                throw new RuntimeException(table.getMessage());
+            }
+            view.write(table.getHorizontalLine());
+            view.write(table.getColumnNames());
+            view.write(table.getHorizontalLine());
+            for(int i = 0; i < table.getLength(); i++){
+                view.write(table.PrintRow(i));
+            }
+            view.write(table.getHorizontalLine());
+        } catch (Exception e) {
+            printError(e);
+        }
+    }
+
+    private void doTables() {
+        view.write(db.Tables().toString());
+    }
+
+    private void doHelp() {
+        try{
+            Path path = FileSystems.getDefault().getPath(
+                    "juja-core","src","ua","com","juja","SqlCmd","help","help.txt");
+            view.write(new String(Files.readAllBytes(path)));
+        }
+        catch (Exception e){
+            view.write("Не могу прочитать файл помощи!");
         }
     }
 
@@ -86,72 +262,6 @@ public class MainController {
                     )
             );
         }
-    }
-
-
-    private void doFind(String[] command) {
-        try {
-            checkExactParam(command.length,2);
-            String tableName = command[1];
-            if (db.TableExist(tableName).getLength() > 0) {
-                Table table = db.Find(tableName);
-                view.write(table.getHorizontalLine());
-                view.write(table.getColumnNames());
-                view.write(table.getHorizontalLine());
-                for(int i = 0; i < table.getLength(); i++){
-                    view.write(table.PrintRow(i));
-                }
-                view.write(table.getHorizontalLine());
-            }
-            else {
-                view.write("Таблицы " + tableName + " не существует");
-                view.write(db.Tables().toString());
-            }
-
-        } catch (Exception e) {
-            printError(e);
-        }
-    }
-
-    private void doInsert(String[] command) {
-        try {
-            checkMinParam(command.length,3);
-            Table table = db.Insert(
-                    Arrays.copyOfRange(command,1,command.length));
-            if (table.isError()) {
-                throw new RuntimeException(table.getMessage());
-            }
-            view.write(table.getHorizontalLine());
-            view.write(table.getColumnNames());
-            view.write(table.getHorizontalLine());
-            for(int i = 0; i < table.getLength(); i++){
-                view.write(table.PrintRow(i));
-            }
-            view.write(table.getHorizontalLine());
-
-        } catch (Exception e) {
-            printError(e);
-        }
-    }
-
-    private void doTables() {
-        view.write(db.Tables().toString());
-    }
-
-    private void doHelp() {
-        view.write("Существующие команды:");
-
-        view.write("\tlist");
-        view.write("\t\tдля получения списка всех таблиц базы, к которой подключились");
-
-        view.write("\tfind|tableName");
-        view.write("\t\tдля получения содержимого таблицы 'tableName'");
-
-        view.write("\thelp");
-        view.write("\t\tдля вывода этого списка на экран");
-
-        view.write("\texit");
-        view.write("\t\tдля выхода из программы");
     }
 
     private void printError(Exception e) {
