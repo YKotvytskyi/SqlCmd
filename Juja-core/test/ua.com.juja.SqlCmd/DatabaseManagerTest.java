@@ -43,8 +43,13 @@ public class DatabaseManagerTest {
     @Test
     public void Insert_Find_Clear(){
         db.Clear(TableName);
-        assertEquals("[r1, r2, r3]\n" +
-                "-------------\n", db.Find(TableName).toString());
+        db.Insert(new String[] {TableName,"r1", "r11_value"});
+        db.Insert(new String[] {TableName,"r1", "r11_value","r2", "r21_value"});
+        String expected = "[r1, r2, r3]\n" +
+                "-------------\n" +
+                "[r11_value, null, null]\n" +
+                "[r11_value, r21_value, null]\n";
+        assertEquals(expected, db.Find(TableName).toString());
         db.Drop(TableName);
     }
 
