@@ -190,7 +190,9 @@ public class JDBCDatabaseManager implements DatabaseManager {
             return new Table(stmt.executeUpdate());
         } catch(Exception sqlException) {
             //sqlException.printStackTrace();
-            return new Table(sqlException.getMessage());
+            return new Table(String.format("%s (%s)",
+                    sqlException.getMessage(),
+                    sqlException.getClass().getSimpleName()));
         }
     }
 
