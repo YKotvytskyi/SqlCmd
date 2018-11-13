@@ -622,7 +622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542116572184</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="workspace">
+      <created>1542116602706</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1542116602706</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -668,6 +675,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32908458" />
@@ -675,9 +683,9 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.32897604" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.5008091" side_tool="true" visible="true" weight="0.47856316" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.47856316" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49919093" visible="true" weight="0.47856316" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4260204" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.17844728" />
       <window_info id="Capture Tool" order="2" />
@@ -790,7 +798,8 @@
     <MESSAGE value="Added more detail an exception description" />
     <MESSAGE value="help file" />
     <MESSAGE value="First full version of the controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="First full version of the controller" />
+    <MESSAGE value="workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
