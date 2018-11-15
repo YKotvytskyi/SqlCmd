@@ -9,7 +9,7 @@
         drop|tableName
         Удаляет таблицу 'tableName'
     create
-        create|tableName|columnName1(|columnNameN))
+        create|tableName|columnName1(|columnNameN)
         Создает таблицу 'tableName' с указанными столбцами columnName1..columnNameN.
     find
         find|tableName
@@ -18,7 +18,7 @@
         insert|tableName|columnName1|value1(|columnNameN|valueN)
         Добавляет строку в таблицу 'tableName' в поле 'fieldName' значение 'value'
     update
-        update|tableName|columnName1|value1|columnName2|value2(|columnNameN|valueN))
+        update|tableName|columnName1|value1|columnName2|value2(|columnNameN|valueN)
         обновить строку в таблице 'tableName'
         где columnName1 равно value1
         установить в 'columnNameN' значение 'valueN'
