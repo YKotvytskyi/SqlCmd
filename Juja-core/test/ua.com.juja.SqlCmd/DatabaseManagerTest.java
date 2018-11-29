@@ -5,8 +5,15 @@ import org.junit.Before;
 import org.junit.Test;
 import ua.com.juja.SqlCmd.model.DatabaseManager;
 import ua.com.juja.SqlCmd.model.JDBCDatabaseManager;
+import ua.com.juja.SqlCmd.model.MemDataBaseManager;
 import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConstMssql;
+import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConstPosgree;
+import ua.com.juja.SqlCmd.resource.config.GetPropertyValues;
 
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,11 +24,34 @@ public class DatabaseManagerTest {
 
     @Before
     public void setup() {
-//        db = JDBCDatabaseManager.getInstance(new DBTypeConstPosgree());
-//        db.setConnection("testdb", "postgres", "admin");
 
-        db = JDBCDatabaseManager.getInstance(new DBTypeConstMssql());
-        db.setConnection("ImportProcessing", "postgres", "admin");
+        GetPropertyValues propertyValues;
+        String dateSource  = "";
+
+        try {
+            Properties prop = new Properties();
+            File configFile = new File("src/"
+                    + GetPropertyValues.configFolderPath
+                    + GetPropertyValues.configFileName);
+            prop.load(new FileInputStream(configFile));
+            dateSource = prop.getProperty("DateSource","Default");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        switch (dateSource){
+            case "MSSQL":
+                db = JDBCDatabaseManager.getInstance(new DBTypeConstMssql());
+                    db.setConnection("ImportProcessing", "postgres", "admin");
+                    break;
+            case "Postgress":
+                db = JDBCDatabaseManager.getInstance(new DBTypeConstPosgree());
+                db.setConnection("testdb", "postgres", "admin");                break;
+            default:
+                db = new MemDataBaseManager();
+        }
+
         if (db.TableExist(TableName).getLength() > 0){
             db.Drop(TableName);
         }
@@ -32,7 +62,7 @@ public class DatabaseManagerTest {
 
     @Test
     public void Create_Insert_GetTableNames() {
-        assertEquals("[TABLE_NAME]\n" +
+        assertEquals("[table_name]\n" +
                         "-------------\n" +
                         "[myTable1]\n",
                 db.Tables()
@@ -55,14 +85,14 @@ public class DatabaseManagerTest {
 
     @Test
     public void ExistTable_Drop(){
-        String expected = "[TABLE_NAME]\n" +
+        String expected = "[table_name]\n" +
                 "-------------\n" +
                 "[myTable1]\n";
 
         assertEquals(expected,
                 db.TableExist(TableName).toString());
         db.Drop(TableName);
-        expected ="[TABLE_NAME]\n" +
+        expected ="[table_name]\n" +
                 "-------------\n";
         assertEquals(expected,
                 db.TableExist(TableName).toString());
