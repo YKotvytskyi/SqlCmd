@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa0c6fe1-29cb-4a2a-a797-6060dcec7f9a" name="Default" comment="">
+    <list default="true" id="fa0c6fe1-29cb-4a2a-a797-6060dcec7f9a" name="Default" comment="Add MemDataBaseManager for test without database">
+      <change afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/MemDataBaseManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/GetPropertyValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored mask="*.zip" />
@@ -14,16 +18,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Juja$DatabaseManagerTest_testInsertClear.ic" NAME="DatabaseManagerTest.testInsertClear Coverage Results" MODIFIED="1541426274394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Juja$DatabaseManagerTest_Update_Find.ic" NAME="DatabaseManagerTest.Update_Find Coverage Results" MODIFIED="1541498506669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ua.com.juja.SqlCmd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Juja$DatabaseManagerTest.ic" NAME="DatabaseManagerTest Coverage Results" MODIFIED="1541507979117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ua.com.juja.SqlCmd.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Juja$Main.ic" NAME="Main Coverage Results" MODIFIED="1541691294005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ua.com.juja.SqlCmd.controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Juja$DatabaseManagerTest_Update_Find.ic" NAME="DatabaseManagerTest.Update_Find Coverage Results" MODIFIED="1541498506669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Juja$DatabaseManagerTest_testInsertClear.ic" NAME="DatabaseManagerTest.testInsertClear Coverage Results" MODIFIED="1541426274394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ua.com.juja.SqlCmd.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Juja$DatabaseManagerTest.ic" NAME="DatabaseManagerTest Coverage Results" MODIFIED="1541507979117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Juja$DatabaseManagerTest_Insert_Delete.ic" NAME="DatabaseManagerTest.Insert_Delete Coverage Results" MODIFIED="1543495567886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ua.com.juja.SqlCmd.*</FILTER>
     </SUITE>
   </component>
@@ -32,67 +39,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JDBCDatabaseManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/JDBCDatabaseManager.java">
+      <file leaf-file-name="DatabaseManagerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            <state relative-caret-position="162">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#Delete_Find#0;class#DatabaseManagerTest#0" />
+                <element signature="e#4682#4683#0" expanded="true" />
+                <element signature="e#4708#4709#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Console.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/view/Console.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <folding>
+                <element signature="e#275#276#0" expanded="true" />
+                <element signature="e#318#319#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDBCDatabaseManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/JDBCDatabaseManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#setDbType#0;class#JDBCDatabaseManager#0" />
-                <element signature="method#getInstance#1;class#JDBCDatabaseManager#0" />
-                <element signature="e#2238#2239#0" expanded="true" />
-                <element signature="e#2291#2292#0" expanded="true" />
-                <element signature="e#2348#2349#0" expanded="true" />
-                <element signature="e#2427#2428#0" expanded="true" />
-                <element signature="e#2483#2484#0" expanded="true" />
+                <element signature="e#1869#1870#0" expanded="true" />
+                <element signature="e#1947#1948#0" expanded="true" />
+                <element signature="e#2500#2501#0" expanded="true" />
                 <element signature="e#2561#2562#0" expanded="true" />
-                <element signature="e#2617#2618#0" expanded="true" />
-                <element signature="e#2678#2679#0" expanded="true" />
-                <element signature="e#2740#2741#0" expanded="true" />
-                <element signature="e#2824#2825#0" expanded="true" />
-                <element signature="e#2880#2881#0" expanded="true" />
-                <element signature="e#2941#2942#0" expanded="true" />
-                <element signature="e#2997#2998#0" expanded="true" />
-                <element signature="e#3058#3059#0" expanded="true" />
-                <element signature="e#3114#3115#0" expanded="true" />
-                <element signature="e#3175#3176#0" expanded="true" />
-                <element signature="e#3638#3639#0" expanded="true" />
-                <element signature="e#3716#3717#0" expanded="true" />
-                <element signature="e#4641#4642#0" expanded="true" />
-                <element signature="e#4694#4695#0" expanded="true" />
-                <element signature="e#6695#6696#0" expanded="true" />
-                <element signature="e#6749#6750#0" expanded="true" />
                 <element signature="method#getDataFromDB#0;class#JDBCDatabaseManager#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseManagerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java">
+      <file leaf-file-name="MemDataBaseManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/MemDataBaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="238">
+              <caret line="161" column="42" selection-start-line="161" selection-start-column="42" selection-end-line="161" selection-end-column="42" />
               <folding>
-                <element signature="method#Create_Insert_GetTableNames#0;class#DatabaseManagerTest#0" />
-                <element signature="method#ExistTable_Drop#0;class#DatabaseManagerTest#0" />
-                <element signature="method#Insert_Delete#0;class#DatabaseManagerTest#0" />
-                <element signature="method#Delete_Find#0;class#DatabaseManagerTest#0" />
+                <element signature="method#Close#0;class#MemDataBaseManager#0" />
+                <element signature="method#setConnection#0;class#MemDataBaseManager#0" />
+                <element signature="method#Tables#0;class#MemDataBaseManager#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/controller/MainController.java">
+      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/Juja-core/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
+            <state relative-caret-position="280">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/config.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetPropertyValues.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/GetPropertyValues.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7897#7898#0" expanded="true" />
-                <element signature="e#7947#7948#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/DatabaseManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -102,8 +145,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -124,13 +167,26 @@
       <find>executeQuery</find>
       <find>setC</find>
       <find>view.write(&quot;</find>
+      <find>crea</find>
+      <find>Drop</find>
+      <find>[TABLE_NAME]</find>
+      <find>drop</find>
+      <find>ValuePair</find>
+      <find>TABLE_NAME</find>
     </findStrings>
     <replaceStrings>
       <replace>Table</replace>
+      <replace>[table_name]</replace>
+      <replace>table_name</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -168,6 +224,15 @@
         <option value="$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/JDBCDatabaseManager.java" />
         <option value="$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/help/help.txt" />
         <option value="$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/dbTypes/MemDataBaseManager.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/JDBCDatabaseManager.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/config.properties" />
+        <option value="$PROJECT_DIR$/Juja-core/src/test/property.java" />
+        <option value="$PROJECT_DIR$/out/production/Juja-core/ua/com/juja/SqlCmd/resource/config/config.properties" />
+        <option value="$PROJECT_DIR$/Juja-core/src/test/App.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/GetPropertyValues.java" />
+        <option value="$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java" />
+        <option value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/MemDataBaseManager.java" />
       </list>
     </option>
   </component>
@@ -195,50 +260,82 @@
             <path>
               <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
               <item name="Juja" type="462c0819:PsiDirectoryNode" />
-              <item name="juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
               <item name="Juja" type="462c0819:PsiDirectoryNode" />
-              <item name="juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
               <item name="Juja" type="462c0819:PsiDirectoryNode" />
-              <item name="juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="juja" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Juja" type="462c0819:PsiDirectoryNode" />
-              <item name="juja-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="juja" type="462c0819:PsiDirectoryNode" />
-              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Juja" type="462c0819:PsiDirectoryNode" />
-              <item name="juja-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="juja" type="462c0819:PsiDirectoryNode" />
-              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
-              <item name="help" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Juja" type="462c0819:PsiDirectoryNode" />
-              <item name="juja-core" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
               <item name="Juja" type="462c0819:PsiDirectoryNode" />
-              <item name="juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SqlCmd" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="Juja-core" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="ua.com.juja.SqlCmd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Juja" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Juja" type="b2602c69:ProjectViewProjectNode" />
@@ -269,6 +366,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="301" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="301" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/property" />
     <property name="last_opened_file_path" value="C:/JavaJDK/jre/lib/sqlDrv/sqljdbc41.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -278,6 +376,13 @@
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="ua.com.juja.SqlCmd.model" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ua.com.juja.SqlCmd.resource.config" />
+      <recent name="ua.com.juja.SqlCmd.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\IKotvytskyi.CORP\IdeaProjects\Juja\Juja-core\test\ua.com.juja.SqlCmd" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -292,14 +397,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.controller.Main" />
+  <component name="RunManager" selected="JUnit.DatabaseManagerTest">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.App" />
       <module name="Juja-core" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ua.com.juja.SqlCmd.controller.*" />
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -321,6 +426,29 @@
       <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.DatabaseManagerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DatabaseManagerTest.Create_Insert_GetTableNames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Juja-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.juja.SqlCmd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ua.com.juja.SqlCmd" />
+      <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.DatabaseManagerTest" />
+      <option name="METHOD_NAME" value="Create_Insert_GetTableNames" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -366,29 +494,6 @@
       <option name="PACKAGE_NAME" value="ua.com.juja.SqlCmd" />
       <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.DatabaseManagerTest" />
       <option name="METHOD_NAME" value="Insert_Delete" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="DatabaseManagerTest.Insert_Find_Clear" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Juja-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ua.com.juja.SqlCmd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ua.com.juja.SqlCmd" />
-      <option name="MAIN_CLASS_NAME" value="ua.com.juja.SqlCmd.DatabaseManagerTest" />
-      <option name="METHOD_NAME" value="Insert_Find_Clear" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -462,18 +567,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.DatabaseManagerTest" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DatabaseManagerTest.ExistTable_Drop" />
       <item itemvalue="JUnit.DatabaseManagerTest.Update_Find" />
       <item itemvalue="JUnit.DatabaseManagerTest.Insert_Delete" />
-      <item itemvalue="JUnit.DatabaseManagerTest.Insert_Find_Clear" />
+      <item itemvalue="JUnit.DatabaseManagerTest.Create_Insert_GetTableNames" />
+      <item itemvalue="JUnit.DatabaseManagerTest.ExistTable_Drop" />
+      <item itemvalue="Application.App" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DatabaseManagerTest.Update_Find" />
-        <item itemvalue="JUnit.DatabaseManagerTest.Insert_Find_Clear" />
         <item itemvalue="JUnit.DatabaseManagerTest.Insert_Delete" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.DatabaseManagerTest.Create_Insert_GetTableNames" />
+        <item itemvalue="JUnit.DatabaseManagerTest.Update_Find" />
         <item itemvalue="JUnit.DatabaseManagerTest.ExistTable_Drop" />
       </list>
     </recent_temporary>
@@ -629,39 +734,53 @@
       <option name="project" value="LOCAL" />
       <updated>1542116602706</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="delete methods from JDBCDatabase">
+      <created>1543496302266</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1543496302266</updated>
+    </task>
+    <task id="LOCAL-00022" summary="current version">
+      <created>1543496337124</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543496337124</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DatabaseManagerTest_Insert_Find_Clear - 2018.11.13 at 10h 29m 47s.xml">
-      <configuration name="DatabaseManagerTest.Insert_Find_Clear" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest_Insert_Delete - 2018.11.29 at 14h 49m 38s.xml">
+      <configuration name="DatabaseManagerTest.Insert_Delete" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Insert_Find_Clear - 2018.11.13 at 10h 29m 59s.xml">
-      <configuration name="DatabaseManagerTest.Insert_Find_Clear" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest_Insert_Delete - 2018.11.29 at 14h 51m 17s.xml">
+      <configuration name="DatabaseManagerTest.Insert_Delete" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Insert_Find_Clear - 2018.11.13 at 10h 30m 23s.xml">
-      <configuration name="DatabaseManagerTest.Insert_Find_Clear" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest_Insert_Delete - 2018.11.29 at 14h 51m 52s.xml">
+      <configuration name="DatabaseManagerTest.Insert_Delete" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Insert_Find_Clear - 2018.11.13 at 10h 32m 42s.xml">
-      <configuration name="DatabaseManagerTest.Insert_Find_Clear" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest_Insert_Delete - 2018.11.29 at 14h 53m 21s.xml">
+      <configuration name="DatabaseManagerTest.Insert_Delete" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Insert_Find_Clear - 2018.11.13 at 10h 33m 17s.xml">
-      <configuration name="DatabaseManagerTest.Insert_Find_Clear" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DatabaseManagerTest - 2018.11.13 at 10h 34m 24s.xml">
+    <history-entry file="DatabaseManagerTest - 2018.11.29 at 14h 53m 31s.xml">
       <configuration name="DatabaseManagerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Update_Find - 2018.11.13 at 10h 36m 43s.xml">
-      <configuration name="DatabaseManagerTest.Update_Find" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest - 2018.11.29 at 14h 54m 27s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Update_Find - 2018.11.13 at 11h 04m 25s.xml">
-      <configuration name="DatabaseManagerTest.Update_Find" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest - 2018.11.29 at 15h 09m 39s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Update_Find - 2018.11.13 at 11h 05m 13s.xml">
-      <configuration name="DatabaseManagerTest.Update_Find" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest - 2018.11.29 at 15h 14m 25s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseManagerTest_Update_Find - 2018.11.13 at 11h 05m 45s.xml">
-      <configuration name="DatabaseManagerTest.Update_Find" configurationId="JUnit" />
+    <history-entry file="DatabaseManagerTest - 2018.11.29 at 15h 16m 19s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseManagerTest - 2018.11.29 at 15h 18m 09s.xml">
+      <configuration name="DatabaseManagerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -679,40 +798,40 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32908458" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32792583" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32792583" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.5008091" side_tool="true" visible="true" weight="0.47856316" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50323623" side_tool="true" weight="0.30359212" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49919093" visible="true" weight="0.47856316" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4260204" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.17844728" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49676377" weight="0.2723059" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37891078" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32847896" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4975728" weight="0.17844728" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994206" weight="0.27651516" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.34142396" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32908458" />
       <window_info id="Structure" order="1" sideWeight="0.50057936" side_tool="true" weight="0.2249191" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36152956" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42178446" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32847896" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info id="Learn" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32908458" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32847896" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.26882967" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32792583" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.2394822" />
       <window_info id="Structure" order="1" sideWeight="0.50057936" side_tool="true" weight="0.2249191" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -723,18 +842,18 @@
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908458" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5202781" />
+      <window_info id="Learn" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32847896" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.17844728" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5202781" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.17844728" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32792583" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info id="Learn" order="5" />
+      <window_info id="Favorites" order="7" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -799,7 +918,10 @@
     <MESSAGE value="help file" />
     <MESSAGE value="First full version of the controller" />
     <MESSAGE value="workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
+    <MESSAGE value="delete methods from JDBCDatabase" />
+    <MESSAGE value="current version" />
+    <MESSAGE value="Add MemDataBaseManager for test without database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add MemDataBaseManager for test without database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,7 +932,7 @@
           <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="126" />
+      <option name="time" value="180" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -833,71 +955,53 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>sqlException.getClass().getSimpleName()</expression-string>
+        <expression-string>prop.getProperty(&quot;DateSource&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sqlException.getClass().getName()</expression-string>
+        <expression-string>prop</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>((String)((SQLServerPreparedStatement)stmt).sqlCommand).value</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.lang.String,com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>param[i*2 + 2]</expression-string>
+        <expression-string>dateSource</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>param[i*2 + 2].toString()</expression-string>
+        <expression-string>rootPath + configFolderPath + configFileName</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>param[2].toString()</expression-string>
+        <expression-string>resourcesDirectory.getAbsolutePath()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>param[param.length - 1].toString()</expression-string>
+        <expression-string>resourcesDirectory</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>stmt.pa</expression-string>
+        <expression-string>classLoader.getResource(&quot;&quot;).getFile()</expression-string>
         <language-id>JAVA</language-id>
-        <custom-info>com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>((SQLServerPreparedStatement) stmt).getParam(1)</expression-string>
+        <expression-string>classLoader.getResource(&quot;&quot;).GetPath()</expression-string>
         <language-id>JAVA</language-id>
-        <custom-info>com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>classLoader.getResource().GetPath()</expression-string>
+        <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/core/InsertionSorter.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/core/InsertionSorter.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/core/InsertionSorter.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/core/InsertionSorter.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
-    <entry file="jar://C:/Java/jdk1.8.0_161/src.zip!/java/util/Comparator.java" />
-    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/BubbleSorter.java" />
     <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/core/InsertionSorter.java" />
     <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Liner.java" />
     <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/core/Main.java" />
@@ -948,14 +1052,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/dbTypes/DBTypeConstPosgree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/dbTypes/DBTypeConstMssql.java">
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/dbTypes/DBTypeConstMssql.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="23" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="23" />
@@ -971,28 +1068,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/JdbcMsSql.java" />
     <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/DatabaseManager1.java" />
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/view/Console.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/dbTypes/DBTypeConst.java">
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/dbTypes/DBTypeConst.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="64" selection-start-line="64" selection-end-line="64" />
@@ -1009,7 +1085,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/controller/Main.java">
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/controller/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
@@ -1019,42 +1095,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/test/Juja-core/ua/com/juja/SqlCmd/DatabaseManagerTest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="76" column="29" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/juja-core/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/juja-core/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+    <entry file="file://$PROJECT_DIR$/out/test/Juja-core/ua/com/juja/SqlCmd/DatabaseManagerTest.class" />
+    <entry file="jar://$PROJECT_DIR$/Juja-core/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#870#1063#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/juja-core/lib/junit-4.12.jar!/org/junit/internal/runners/statements/RunBefores.class">
+    <entry file="jar://$PROJECT_DIR$/Juja-core/lib/junit-4.12.jar!/org/junit/internal/runners/statements/RunBefores.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/juja-core/lib/junit-4.12.jar!/org/junit/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="333" selection-start-line="333" selection-end-line="333" />
         </state>
       </provider>
     </entry>
@@ -1072,75 +1124,219 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="method#Create_Insert_GetTableNames#0;class#DatabaseManagerTest#0" />
-            <element signature="method#ExistTable_Drop#0;class#DatabaseManagerTest#0" />
-            <element signature="method#Insert_Delete#0;class#DatabaseManagerTest#0" />
-            <element signature="method#Delete_Find#0;class#DatabaseManagerTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/help/help.txt">
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/help/help.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/model/JDBCDatabaseManager.java">
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/dbTypes/DBTypeConstPosgree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="97" column="15" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
+          <folding>
+            <element signature="e#2492#2493#0" expanded="true" />
+            <element signature="e#2526#2527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/JavaJDK/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/config.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4640">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Juja-core/app.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Juja-core/ua/com/juja/SqlCmd/controller/Main.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
           <folding>
+            <element signature="e#0#552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Juja-core/ua/com/juja/SqlCmd/model/DatabaseManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Juja-core/ua/com/juja/SqlCmd/resource/config/app.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Juja-core/ua/com/juja/SqlCmd/resource/config/GetPropertyValues.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#1396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/JavaJDK/jre/lib/rt.jar!/java/lang/ClassLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="407" column="17" selection-start-line="407" selection-start-column="8" selection-end-line="407" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Juja-core/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/GetPropertyValues.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/test/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Juja-core/ua/com/juja/SqlCmd/resource/config/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/resource/config/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/JDBCDatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#setDbType#0;class#JDBCDatabaseManager#0" />
-            <element signature="method#getInstance#1;class#JDBCDatabaseManager#0" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2291#2292#0" expanded="true" />
-            <element signature="e#2348#2349#0" expanded="true" />
-            <element signature="e#2427#2428#0" expanded="true" />
-            <element signature="e#2483#2484#0" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+            <element signature="e#1947#1948#0" expanded="true" />
+            <element signature="e#2500#2501#0" expanded="true" />
             <element signature="e#2561#2562#0" expanded="true" />
-            <element signature="e#2617#2618#0" expanded="true" />
-            <element signature="e#2678#2679#0" expanded="true" />
-            <element signature="e#2740#2741#0" expanded="true" />
-            <element signature="e#2824#2825#0" expanded="true" />
-            <element signature="e#2880#2881#0" expanded="true" />
-            <element signature="e#2941#2942#0" expanded="true" />
-            <element signature="e#2997#2998#0" expanded="true" />
-            <element signature="e#3058#3059#0" expanded="true" />
-            <element signature="e#3114#3115#0" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3638#3639#0" expanded="true" />
-            <element signature="e#3716#3717#0" expanded="true" />
-            <element signature="e#4641#4642#0" expanded="true" />
-            <element signature="e#4694#4695#0" expanded="true" />
-            <element signature="e#6695#6696#0" expanded="true" />
-            <element signature="e#6749#6750#0" expanded="true" />
             <element signature="method#getDataFromDB#0;class#JDBCDatabaseManager#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/juja-core/src/ua/com/juja/SqlCmd/controller/MainController.java">
+    <entry file="jar://C:/JavaJDK/jre/lib/rt.jar!/java/util/Arrays.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
+        <state relative-caret-position="262">
+          <caret line="1288" column="26" selection-start-line="1288" selection-start-column="26" selection-end-line="1288" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/view/Console.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Juja-core/lib/junit-4.12.jar!/org/junit/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/src/ua/com/juja/SqlCmd/model/MemDataBaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="161" column="42" selection-start-line="161" selection-start-column="42" selection-end-line="161" selection-end-column="42" />
+          <folding>
+            <element signature="method#Close#0;class#MemDataBaseManager#0" />
+            <element signature="method#setConnection#0;class#MemDataBaseManager#0" />
+            <element signature="method#Tables#0;class#MemDataBaseManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Juja-core/test/ua.com.juja.SqlCmd/DatabaseManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7897#7898#0" expanded="true" />
-            <element signature="e#7947#7948#0" expanded="true" />
+            <element signature="method#Delete_Find#0;class#DatabaseManagerTest#0" />
+            <element signature="e#4682#4683#0" expanded="true" />
+            <element signature="e#4708#4709#0" expanded="true" />
           </folding>
         </state>
       </provider>
