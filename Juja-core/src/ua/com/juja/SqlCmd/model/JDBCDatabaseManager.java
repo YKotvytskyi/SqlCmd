@@ -23,16 +23,10 @@ public class JDBCDatabaseManager implements DatabaseManager {
 
     public static Connection ConnObj;
 
-    public static JDBCDatabaseManager getInstance(){
-        return instance;
-    }
-
     public static JDBCDatabaseManager getInstance(DBTypeConst dbType){
         instance.setDbType(dbType);
         return instance;
     }
-
-    public Connection getConnection() {return ConnObj;}
 
     @Override
     public void Close(){
@@ -51,13 +45,6 @@ public class JDBCDatabaseManager implements DatabaseManager {
         try {
             Class.forName(dbType.DriverClassName);
             ConnObj = DriverManager.getConnection(JDBC_URL);
-//            if(ConnObj != null) {
-//                DatabaseMetaData metaObj = (DatabaseMetaData) ConnObj.getMetaData();
-//                System.out.println("Driver Name?= " + metaObj.getDriverName() + ", Driver Version?= "
-//                        + metaObj.getDriverVersion() + ", Product Name?= "
-//                        + metaObj.getDatabaseProductName()
-//                        + ", Product Version?= " + metaObj.getDatabaseProductVersion());
-//            }
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
         }
