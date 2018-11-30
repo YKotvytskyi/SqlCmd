@@ -1,23 +1,29 @@
 package ua.com.juja.SqlCmd.controller;
 
+import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 import ua.com.juja.SqlCmd.model.DatabaseManager;
 import ua.com.juja.SqlCmd.model.Table;
 import ua.com.juja.SqlCmd.view.View;
 
+import java.io.File;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Properties;
 
 public class MainController {
 
-    public MainController(View view,DatabaseManager db){
+    public MainController(View view,DatabaseManager db, Properties properties){
         this.view = view;
         this.db = db;
+        this.properties = properties;
     }
 
     View view;
     DatabaseManager db;
+    Properties properties;
 
     public void run() {
 
@@ -230,9 +236,12 @@ public class MainController {
 
     private void doHelp() {
         try{
-            Path path = FileSystems.getDefault().getPath(
-                    "juja-core","src","ua","com","juja","SqlCmd","help","help.txt");
-            view.write(new String(Files.readAllBytes(path)));
+            //String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+
+            String configFile = properties.getProperty("helpFilePath");
+            File configPath = new  File(getClass().getClassLoader().getResource(configFile).getFile());
+            String helpText = new String(Files.readAllBytes(Paths.get(configPath.getAbsolutePath())));
+            view.write(helpText);
         }
         catch (Exception e){
             view.write("Не могу прочитать файл помощи!");

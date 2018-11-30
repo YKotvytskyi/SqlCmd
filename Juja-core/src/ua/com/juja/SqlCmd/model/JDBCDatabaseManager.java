@@ -46,7 +46,10 @@ public class JDBCDatabaseManager implements DatabaseManager {
             Class.forName(dbType.DriverClassName);
             ConnObj = DriverManager.getConnection(JDBC_URL);
         } catch(Exception sqlException) {
-            sqlException.printStackTrace();
+            System.out.printf(
+                    "Не могу загрузить драйвер доступа к базе данных!\n%s",
+                    sqlException.getMessage()
+            );
         }
     }
 
@@ -96,7 +99,7 @@ public class JDBCDatabaseManager implements DatabaseManager {
 
     private boolean tableExist(String tableName){ //TODO rewrite
 
-        PreparedStatement stmt = null;
+        PreparedStatement stmt;
         try{
             stmt = ConnObj.prepareStatement(dbType.List());
             ResultSet rs = stmt.executeQuery();
@@ -145,8 +148,6 @@ public class JDBCDatabaseManager implements DatabaseManager {
             PreparedStatement stmt = null;
             switch (sqlCmdType) {
                 case Create:
-                    String[] createParam = new String[param.length -1 ];
-                    System.arraycopy(param, 1, createParam,0,param.length - 1);
                     stmt = ConnObj.prepareStatement(dbType.Create((String[]) param));
                     break;
                 case Insert:

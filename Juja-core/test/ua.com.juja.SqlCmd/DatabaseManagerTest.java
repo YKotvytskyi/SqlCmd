@@ -3,12 +3,12 @@ package ua.com.juja.SqlCmd;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ua.com.juja.SqlCmd.controller.Main;
 import ua.com.juja.SqlCmd.model.DatabaseManager;
 import ua.com.juja.SqlCmd.model.JDBCDatabaseManager;
 import ua.com.juja.SqlCmd.model.MemDataBaseManager;
 import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConstMssql;
 import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConstPosgree;
-import ua.com.juja.SqlCmd.resource.config.GetPropertyValues;
 
 
 import java.io.File;
@@ -25,14 +25,13 @@ public class DatabaseManagerTest {
     @Before
     public void setup() {
 
-        GetPropertyValues propertyValues;
         String dateSource  = "";
 
         try {
             Properties prop = new Properties();
             File configFile = new File("src/"
-                    + GetPropertyValues.configFolderPath
-                    + GetPropertyValues.configFileName);
+                    + Main.configFolderPath
+                    + Main.configFileName);
             prop.load(new FileInputStream(configFile));
             dateSource = prop.getProperty("DateSource","Default");
         }
