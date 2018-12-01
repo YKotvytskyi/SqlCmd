@@ -10,7 +10,7 @@ public class JDBCDatabaseManager implements DatabaseManager {
 
     private static JDBCDatabaseManager instance = new JDBCDatabaseManager();
 
-    private static DBTypeConst dbType = new DBTypeConstPosgree();
+    static DBTypeConst dbType = new DBTypeConstPosgree();
 
     private JDBCDatabaseManager(){}
 

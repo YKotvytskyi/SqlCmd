@@ -4,11 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import ua.com.juja.SqlCmd.controller.Main;
-import ua.com.juja.SqlCmd.model.DatabaseManager;
-import ua.com.juja.SqlCmd.model.JDBCDatabaseManager;
-import ua.com.juja.SqlCmd.model.MemDataBaseManager;
-import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConstMssql;
-import ua.com.juja.SqlCmd.model.dbTypes.DBTypeConstPosgree;
+import ua.com.juja.SqlCmd.model.*;
+import ua.com.juja.SqlCmd.model.dbTypes.*;
 
 
 import java.io.File;
@@ -20,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 public class DatabaseManagerTest {
 
     private DatabaseManager db;
-    private String TableName = "myTable1";
+    private String TableName = "my_table1";
 
     @Before
     public void setup() {
@@ -63,7 +60,7 @@ public class DatabaseManagerTest {
     public void Create_Insert_GetTableNames() {
         assertEquals("[table_name]\n" +
                         "-------------\n" +
-                        "[myTable1]\n",
+                        "[my_table1]\n",
                 db.Tables()
                         .toString());
         db.Drop(TableName);
@@ -86,7 +83,7 @@ public class DatabaseManagerTest {
     public void ExistTable_Drop(){
         String expected = "[table_name]\n" +
                 "-------------\n" +
-                "[myTable1]\n";
+                "[my_table1]\n";
 
         assertEquals(expected,
                 db.TableExist(TableName).toString());

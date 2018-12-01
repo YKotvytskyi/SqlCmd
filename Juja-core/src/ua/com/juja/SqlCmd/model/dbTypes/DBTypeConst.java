@@ -1,11 +1,11 @@
 package ua.com.juja.SqlCmd.model.dbTypes;
 
 public abstract class DBTypeConst {
-    final String ServerName;
-    final String ServerPort;
-    final String DriverClassName;
-    final String DriverStringName;
-    final String Schema;
+    public final String ServerName;
+    public final String ServerPort;
+    public final String DriverClassName;
+    public final String DriverStringName;
+    public final String Schema;
 
 
     abstract public String getConnectionString(String database, String username, String password);
