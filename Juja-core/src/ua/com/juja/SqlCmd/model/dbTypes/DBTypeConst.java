@@ -1,16 +1,16 @@
 package ua.com.juja.SqlCmd.model.dbTypes;
 
 public abstract class DBTypeConst {
-    public final String ServerName;
-    public final String ServerPort;
-    public final String DriverClassName;
-    public final String DriverStringName;
-    public final String Schema;
+    final String ServerName;
+    final String ServerPort;
+    final String DriverClassName;
+    final String DriverStringName;
+    final String Schema;
 
 
     abstract public String getConnectionString(String database, String username, String password);
 
-    public DBTypeConst(String serverName, String serverPort,
+    DBTypeConst(String serverName, String serverPort,
                        String driverClassName, String driverStringName, String schema) {
         ServerName = serverName;
         ServerPort = serverPort;
@@ -30,8 +30,9 @@ public abstract class DBTypeConst {
     public String TableExist(String tableName){
         return String.format(
                 "SELECT Distinct TABLE_NAME FROM information_schema.TABLES "
-                        +"where TABLE_SCHEMA = '%s'"
-                        +" and TABLE_NAME = '%s'",
+                        +"where TABLE_SCHEMA = '%s' "
+                        +" and TABLE_NAME = '%s' "
+                        +"order by 1",
                 Schema,
                 tableName
                 );
@@ -39,7 +40,7 @@ public abstract class DBTypeConst {
 
     public String Select(String tableName) {
         return  String.format(
-                "SELECT * FROM %s.%s",
+                "SELECT * FROM %s.%s order by 1",
                 Schema,
                 tableName
                 );
@@ -78,7 +79,7 @@ public abstract class DBTypeConst {
 
     public String Clear(String tableName){
         return String.format(
-                "DELETE %s.%s",
+                "DELETE FROM %s.%s",
                 Schema,
                 tableName
                 );
@@ -101,7 +102,7 @@ public abstract class DBTypeConst {
     }
 
     public String Delete(String[] param){
-        return String.format("DELETE %s.%s WHERE %s = ?",
+        return String.format("DELETE FROM %s.%s WHERE %s = ?",
                 Schema,
                 param[0],
                 param[1]
@@ -109,13 +110,3 @@ public abstract class DBTypeConst {
     }
 
 }
-
-//    public static String JDBC_URL = "jdbc:sqlserver://localhost:1433;databaseName=tutorialDb;integratedSecurity=true";
-//    public static String JDBC_URL = "jdbc:postgresql://localhost:5432;databaseName=testdb?user=postgres&password=admin";
-
-
-
-
-
-
-
