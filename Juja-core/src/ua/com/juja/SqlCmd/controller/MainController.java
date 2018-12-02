@@ -1,14 +1,11 @@
 package ua.com.juja.SqlCmd.controller;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 import ua.com.juja.SqlCmd.model.DatabaseManager;
 import ua.com.juja.SqlCmd.model.Table;
 import ua.com.juja.SqlCmd.view.View;
 
 import java.io.File;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Properties;
@@ -33,7 +30,7 @@ public class MainController {
 
             String commandLine = view.read();
             String[] command = commandLine.split("\\|");
-            String commandName = command[0];
+            String commandName = command[0].toLowerCase();
             switch (commandName){
                 case "help"     : doHelp();
                     break;
@@ -120,7 +117,7 @@ public class MainController {
                 String message = view.read();
                 String[] cmdParameters = message.split("\\|");
                 checkExactParam(cmdParameters.length,3);
-                db.setConnection(cmdParameters[0], cmdParameters[0], cmdParameters[0]);
+                db.setConnection(cmdParameters[0], cmdParameters[1], cmdParameters[2]);
                 break;
             } catch (Exception e) {
                 printError(e);

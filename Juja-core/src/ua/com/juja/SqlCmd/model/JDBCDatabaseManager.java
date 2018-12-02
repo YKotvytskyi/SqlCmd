@@ -41,10 +41,10 @@ public class JDBCDatabaseManager implements DatabaseManager {
 
     @Override
     public void setConnection(String database, String username, String password) {
-        String JDBC_URL = getConnectionString(database,username,password);
+        String jdbc_url = getConnectionString(database,username,password);
         try {
             Class.forName(dbType.DriverClassName);
-            ConnObj = DriverManager.getConnection(JDBC_URL);
+            ConnObj = DriverManager.getConnection(jdbc_url);
         } catch(Exception sqlException) {
             System.out.printf(
                     "Не могу загрузить драйвер доступа к базе данных!\n%s",
@@ -95,20 +95,6 @@ public class JDBCDatabaseManager implements DatabaseManager {
     @Override
     public Table Delete(String[] param){
         return executeUpdate(dbCommand.Delete, param);
-    }
-
-    private boolean tableExist(String tableName){ //TODO rewrite
-
-        PreparedStatement stmt;
-        try{
-            stmt = ConnObj.prepareStatement(dbType.List());
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next())
-                return true;
-        } catch(Exception sqlException) {
-            sqlException.printStackTrace();
-        }
-        return false;
     }
 
     @Override
@@ -182,10 +168,6 @@ public class JDBCDatabaseManager implements DatabaseManager {
                     sqlException.getMessage(),
                     sqlException.getClass().getSimpleName()));
         }
-    }
-
-    private Table executeUpdate(dbCommand sqlCmdType){
-        return executeUpdate(sqlCmdType, null);
     }
 
     private String[] Columns;
