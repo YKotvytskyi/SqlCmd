@@ -43,7 +43,8 @@ public class DatabaseManagerTest {
                     break;
             case "Postgress":
                 db = JDBCDatabaseManager.getInstance(new DBTypeConstPosgree());
-                db.setConnection("testdb", "postgres", "admin");                break;
+                db.setConnection("testdb", "postgres", "admin");
+                break;
             default:
                 db = new MemDataBaseManager();
         }
