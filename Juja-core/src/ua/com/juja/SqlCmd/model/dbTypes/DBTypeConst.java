@@ -3,7 +3,7 @@ package ua.com.juja.SqlCmd.model.dbTypes;
 public abstract class DBTypeConst {
     final String ServerName;
     final String ServerPort;
-    final String DriverClassName;
+    public final String DriverClassName;
     final String DriverStringName;
     final String Schema;
 
