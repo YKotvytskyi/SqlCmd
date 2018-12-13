@@ -1,27 +1,84 @@
 package ua.com.juja.SqlCmd.controller;
 
-import ua.com.juja.SqlCmd.model.DatabaseManager;
-import ua.com.juja.SqlCmd.model.Table;
+import ua.com.juja.SqlCmd.controller.command.*;
+import ua.com.juja.SqlCmd.model.*;
 import ua.com.juja.SqlCmd.view.View;
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.Arrays;
 import java.util.Properties;
 
 public class MainController {
 
-    public MainController(View view,DatabaseManager db, Properties properties){
+    public MainController(View view,DatabaseManager dm, Properties properties){
         this.view = view;
-        this.db = db;
+        this.dm = dm;
         this.properties = properties;
+        String configFile = properties.getProperty("helpFilePath");
+
+        commands = new Command[]{
+            new Connect(dm,view),
+            new Help(view,configFile),
+            new Exit(view)
+        };
+
     }
 
-    View view;
-    DatabaseManager db;
-    Properties properties;
+    private View view;
+    private DatabaseManager dm;
+    private Properties properties;
 
+    private Command[] commands;
+
+    void run() {
+        try {
+            doWork();
+        } catch (ExitException e) {
+            // do nothing
+        }
+    }
+
+    private void doWork() {
+        view.write("Привет юзер!");
+        view.write("Введи, пожалуйста имя базы данных, имя пользователя и пароль в формате: connect|database|userName|password");
+
+        while (true) {
+            String input = view.read();
+
+            for (Command command : commands) {
+                try {
+                    if (command.canProcess(input)) {
+                        command.process(input);
+                        break;
+                    }
+                } catch (Exception e) {
+                    if (e instanceof ExitException) {
+                        throw (ExitException)e;
+                    }
+                    printError(e);
+                    break;
+                }
+            }
+            view.write("Введи команду (или help для помощи):");
+        }
+    }
+
+    private void printError(Exception e) {
+        String message = e.getMessage();
+        Throwable cause = e.getCause();
+        if (cause != null) {
+            message += " " + cause.getMessage();
+        }
+        view.write("Неудача! по причине: " + message);
+        view.write("Повтори попытку.");
+    }
+
+// <editor-fold desc = "Old code">
+
+// <editor-fold desc = "Method 'run'">
+
+/*
     public void run() {
 
         connectToDb();
@@ -68,11 +125,14 @@ public class MainController {
             }
         }
     }
+*/
+
+// </editor-fold>
 
     private void doCreate(String[] command) {
         try {
             checkMinParam(command.length,3);
-            Table table = db.Create(
+            Table table = dm.Create(
                     Arrays.copyOfRange(command,1,command.length));
             if (table.isError()) {
                 throw new RuntimeException(table.getMessage());
@@ -89,10 +149,11 @@ public class MainController {
         }
     }
 
+
     private void doClear(String[] command) {
         try {
             checkExactParam(command.length,2);
-            Table table = db.Clear(command[1]);
+            Table table = dm.Clear(command[1]);
             if (table.isError()) {
                 throw new RuntimeException(table.getMessage());
             }
@@ -117,7 +178,7 @@ public class MainController {
                 String message = view.read();
                 String[] cmdParameters = message.split("\\|");
                 checkExactParam(cmdParameters.length,3);
-                db.setConnection(cmdParameters[0], cmdParameters[1], cmdParameters[2]);
+                dm.setConnection(cmdParameters[0], cmdParameters[1], cmdParameters[2]);
                 break;
             } catch (Exception e) {
                 printError(e);
@@ -128,7 +189,7 @@ public class MainController {
     private void doDrop(String[] command) {
         try {
             checkExactParam(command.length,2);
-            Table table = db.Drop(command[1]);
+            Table table = dm.Drop(command[1]);
             if (table.isError()) {
                 throw new RuntimeException(table.getMessage());
             }
@@ -148,8 +209,8 @@ public class MainController {
         try {
             checkExactParam(command.length,2);
             String tableName = command[1];
-            if (db.TableExist(tableName).getLength() > 0) {
-                Table table = db.Find(tableName);
+            if (dm.TableExist(tableName).getLength() > 0) {
+                Table table = dm.Find(tableName);
                 view.write(table.getHorizontalLine());
                 view.write(table.getColumnNames());
                 view.write(table.getHorizontalLine());
@@ -160,7 +221,7 @@ public class MainController {
             }
             else {
                 view.write("Таблицы " + tableName + " не существует");
-                view.write(db.Tables().toString());
+                view.write(dm.Tables().toString());
             }
         } catch (Exception e) {
             printError(e);
@@ -170,7 +231,7 @@ public class MainController {
     private void doInsert(String[] command) {
         try {
             checkMinParam(command.length,3);
-            Table table = db.Insert(
+            Table table = dm.Insert(
                     Arrays.copyOfRange(command,1,command.length));
             if (table.isError()) {
                 throw new RuntimeException(table.getMessage());
@@ -190,7 +251,7 @@ public class MainController {
     private void doUpdate(String[] command) {
         try {
             checkMinParam(command.length,6);
-            Table table = db.Update(
+            Table table = dm.Update(
                     Arrays.copyOfRange(command,1,command.length));
             if (table.isError()) {
                 throw new RuntimeException(table.getMessage());
@@ -210,7 +271,7 @@ public class MainController {
     private void doDelete(String[] command) {
         try {
             checkExactParam(command.length,4);
-            Table table = db.Delete(
+            Table table = dm.Delete(
                     Arrays.copyOfRange(command,1,command.length));
             if (table.isError()) {
                 throw new RuntimeException(table.getMessage());
@@ -228,13 +289,11 @@ public class MainController {
     }
 
     private void doTables() {
-        view.write(db.Tables().toString());
+        view.write(dm.Tables().toString());
     }
 
     private void doHelp() {
         try{
-            //String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
-
             String configFile = properties.getProperty("helpFilePath");
             File configPath = new  File(getClass().getClassLoader().getResource(configFile).getFile());
             String helpText = new String(Files.readAllBytes(Paths.get(configPath.getAbsolutePath())));
@@ -269,13 +328,7 @@ public class MainController {
         }
     }
 
-    private void printError(Exception e) {
-        String message = e.getMessage();
-        Throwable cause = e.getCause();
-        if (cause != null) {
-            message += " " + cause.getMessage();
-        }
-        view.write("Неудача! по причине: " + message);
-        view.write("Повтори попытку.");
-    }
+// </editor-fold>
+
 }
+
