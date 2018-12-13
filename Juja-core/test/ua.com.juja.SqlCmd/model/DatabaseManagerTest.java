@@ -1,4 +1,4 @@
-package ua.com.juja.SqlCmd;
+package ua.com.juja.SqlCmd.model;
 
 import org.junit.After;
 import org.junit.Before;

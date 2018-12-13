@@ -1,11 +1,11 @@
 package ua.com.juja.SqlCmd.model.dbTypes;
 
 public abstract class DBTypeConst {
-    public final String ServerName;
-    public final String ServerPort;
-    public final String DriverClassName;
-    public final String DriverStringName;
-    public final String Schema;
+    final String ServerName;
+    final String ServerPort;
+    final String DriverClassName;
+    final String DriverStringName;
+    final String Schema;
 
 
     abstract public String getConnectionString(String database, String username, String password);
@@ -21,7 +21,7 @@ public abstract class DBTypeConst {
 
     public String List(){
         return String.format(
-                "SELECT Distinct TABLE_NAME FROM information_schema.TABLES"
+                "SELECT Distinct table_name FROM information_schema.TABLES"
                 +" WHERE table_schema = '%s'",
                 Schema
         );
@@ -29,7 +29,7 @@ public abstract class DBTypeConst {
 
     public String TableExist(String tableName){
         return String.format(
-                "SELECT Distinct TABLE_NAME FROM information_schema.TABLES "
+                "SELECT Distinct table_name FROM information_schema.TABLES "
                         +"where TABLE_SCHEMA = '%s' "
                         +" and TABLE_NAME = '%s' "
                         +"order by 1",
