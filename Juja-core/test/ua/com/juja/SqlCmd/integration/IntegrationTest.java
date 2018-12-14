@@ -24,7 +24,9 @@ public class IntegrationTest {
             " connect|database|userName|password\r\n";
 
     private String appExitMessage = "Введи команду (или help для помощи):\r\n" +
-            "До скорой встречи!";
+            "До скорой встречи!\r\n";
+
+//    private String appNewCommand = "Введи команду (или help для помощи):\r\n";
 
 // </editor-fold>
 
@@ -52,8 +54,65 @@ public class IntegrationTest {
         Main.main(new String[0]);
         String appAnswer = getData();
         String appHelpScreen = getHelpText(prop.getProperty("helpFilePath"));
-        assertEquals(appHelloMessage + appHelpScreen + "\r\n" + appExitMessage + "\r\n",
+        assertEquals(appHelloMessage + appHelpScreen + "\r\n" + appExitMessage,
                 appAnswer);
+    }
+
+    @Test
+    public void testConnect(){
+
+        in.add("connect|ImportProcessing|user|password");
+        in.add("exit");
+        Main.main(new String[0]);
+        String appAnswer = getData();
+        assertEquals(appHelloMessage
+                        + "Успех!" + "\r\n"
+                        + appExitMessage ,
+                appAnswer);
+
+        try{
+            in.reset();
+        }
+        catch (IOException e){
+            System.out.printf(e.getMessage());
+        }
+
+        in.add("connect|ImportProcessing|user");
+        in.add("exit");
+        getData();
+        Main.main(new String[0]);
+        appAnswer = getData();
+        assertEquals(appHelloMessage
+                        + "Неудача! по причине: Неверно количество параметров разделенных знаком '|', ожидается 4, но есть: 3\r\n" +
+                        "Повтори попытку." + "\r\n"
+                        + appExitMessage ,
+                appAnswer);
+    }
+
+    @Test
+    public void testUnsupported(){
+        in.add("unsupported");
+        in.add("exit");
+        Main.main(new String[0]);
+        String appAnswer = getData();
+        assertEquals(appHelloMessage
+                        + "Несуществующая команда: unsupported" + "\r\n"
+                        + appExitMessage ,
+                appAnswer);
+    }
+
+    @Test
+    public void testCreate(){
+        in.add("connect|ImportProcessing|user|password");
+        in.add("create|my_table1|col1|col2");
+        in.add("exit");
+        Main.main(new String[0]);
+        String appAnswer = getData();
+        assertEquals(appHelloMessage
+                        + "Успех!" + "\r\n"
+                        + appExitMessage ,
+                appAnswer);
+
     }
 
     Properties getAppProperties() {
@@ -89,4 +148,5 @@ public class IntegrationTest {
         }
         return helpText;
     }
+
 }

@@ -19,8 +19,10 @@ public class MainController {
 
         commands = new Command[]{
             new Connect(dm,view),
+            new Create(dm,view),
             new Help(view,configFile),
-            new Exit(view)
+            new Exit(view),
+            new Unsupported(view)
         };
 
     }

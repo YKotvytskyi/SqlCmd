@@ -99,6 +99,17 @@ public class Table {
         return Rows.length;
     }
 
+    public String printTable(){
+        String result = getHorizontalLine();
+        result += getColumnNames();
+        result += getHorizontalLine();
+        for(int i = 0; i < getLength(); i++){
+            result += PrintRow(i);
+        }
+        result += getHorizontalLine();
+        return result;
+    }
+
     @Override
     public String toString() {
 

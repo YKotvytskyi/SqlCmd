@@ -42,4 +42,5 @@ public class ConfigurableInputStream extends InputStream {
         line = null;
         endLine = false;
     }
+
 }

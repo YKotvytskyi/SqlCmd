@@ -23,20 +23,12 @@ public class Connect implements Command {
 
     @Override
     public void process(String command) {
-        String[] cmdData = command.split("|");
-        int cmdParamCount = CONNECT_SAMPLE.split("|").length;
-        if (cmdData.length != cmdParamCount) {
-            throw new IllegalArgumentException(
-                    String.format("Неверно количество параметров разделенных "
-                            +"знаком '|', ожидается %s, но есть: %s",
-                            cmdParamCount,
-                            cmdData.length
-                            )
-            );
-        }
+        Utils.checkNumberParameters(CONNECT_SAMPLE, command);
+        String[] cmdData = command.split("\\|");
         String dbName = cmdData[1];
         String userName = cmdData[2];
         String password = cmdData[3];
         dm.setConnection(dbName,userName,password);
+        view.write("Успех!");
     }
 }
