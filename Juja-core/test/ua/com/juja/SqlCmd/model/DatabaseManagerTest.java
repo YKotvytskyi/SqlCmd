@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import ua.com.juja.SqlCmd.controller.Main;
-import ua.com.juja.SqlCmd.model.*;
 import ua.com.juja.SqlCmd.model.dbTypes.*;
 
 
@@ -49,7 +48,7 @@ public class DatabaseManagerTest {
                 db = new MemDataBaseManager();
         }
 
-        if (db.TableExist(TableName).getLength() > 0){
+        if (db.TableExist(TableName).geRowCount() > 0){
             db.Drop(TableName);
         }
         db.Create(new String[]{TableName, "r1", "r2","r3"});

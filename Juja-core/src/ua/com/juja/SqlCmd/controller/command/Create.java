@@ -26,7 +26,7 @@ public class Create implements Command {
         String[] cmdData = command.split("\\|");
         if (cmdData.length < 2 ) {
             throw new IllegalArgumentException(
-                    String.format(" В команде 'create | tableName | column1 | column2 | ... | columnN' "
+                    String.format(" В команде 'create|TableName' "
                             +" ожидаеться не менее 2 параметров, разделенных '|', у тебя %s ",
                             cmdData.length)
             );
@@ -37,7 +37,6 @@ public class Create implements Command {
         if (table.isError()) {
             throw new RuntimeException(table.getMessage());
         }
-        view.write(table.printTable());
         view.write(String.format("Таблица была '%s' успещно создана",cmdData[1]));
     }
 }

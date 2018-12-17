@@ -3,6 +3,7 @@ package ua.com.juja.SqlCmd.integration;
 import org.junit.Before;
 import org.junit.Test;
 import ua.com.juja.SqlCmd.controller.Main;
+import ua.com.juja.SqlCmd.controller.command.Unsupported;
 
 import javax.imageio.IIOException;
 import java.io.*;
@@ -16,6 +17,9 @@ public class IntegrationTest {
 
     private ConfigurableInputStream in = new ConfigurableInputStream();
     private ByteArrayOutputStream out = new ByteArrayOutputStream();
+    private String connectLine = "connect|ImportProcessing|user|password";
+    private String exitLine = "exit";
+    private String tableName = "my_table1";
 
 // <editor-fold desc = "App message strings">
 
@@ -34,6 +38,23 @@ public class IntegrationTest {
     public void setup(){
         System.setIn(in);
         System.setOut(new PrintStream(out));
+        in.add(connectLine);
+        in.add("drop|"+tableName);
+        in.add(exitLine);
+        Main.main(new String[0]);
+        resetMessages();
+    }
+
+    private void resetMessages() {
+        try {
+            in.reset();
+            out.reset();
+        }
+        catch (Exception  e){
+            if ((e instanceof IOException) || (e instanceof UnsupportedEncodingException)){
+                System.out.printf(e.getMessage());
+            }
+        }
     }
 
     public String getData() {
@@ -61,7 +82,7 @@ public class IntegrationTest {
     @Test
     public void testConnect(){
 
-        in.add("connect|ImportProcessing|user|password");
+        in.add(connectLine);
         in.add("exit");
         Main.main(new String[0]);
         String appAnswer = getData();
@@ -103,16 +124,43 @@ public class IntegrationTest {
 
     @Test
     public void testCreate(){
-        in.add("connect|ImportProcessing|user|password");
+        in.add(connectLine);
         in.add("create|my_table1|col1|col2");
-        in.add("exit");
+        in.add(exitLine);
         Main.main(new String[0]);
         String appAnswer = getData();
-        assertEquals(appHelloMessage
-                        + "Успех!" + "\r\n"
-                        + appExitMessage ,
+        assertEquals(appHelloMessage +
+                        "Успех!" + "\r\n" +
+                        "Введи команду (или help для помощи):\r\n"+
+                        "Таблица была 'my_table1' успещно создана\r\n" +
+                        appExitMessage ,
                 appAnswer);
+    }
 
+    @Test
+    public void testTableExist(){
+        in.add(connectLine);
+        in.add("create|my_table1|col1|col2");
+        in.add(exitLine);
+        Main.main(new String[0]);
+        resetMessages();
+        in.add("connect|ImportProcessing|user|password");
+        String tableName = "my_table1";
+        in.add("tableExist|");
+        in.add("tableExist|" +  tableName);
+        in.add("exit");
+        Main.main(new String[0]);
+        String answer = getData();
+        assertEquals(appHelloMessage
+                        +"Успех!\r\n" +
+                        "Введи команду (или help для помощи):\r\n" +
+                        "Неудача! по причине: В комаде 'TableExist|TableName' должно быть два параметра,"+
+                        " разделенных '|', у тебя 1\r\n" +
+                        "Повтори попытку.\r\n" +
+                        "Введи команду (или help для помощи):\r\n"+
+                        "Таблица 'my_table1' существует.\r\n"
+                        + appExitMessage,
+                answer);
     }
 
     Properties getAppProperties() {

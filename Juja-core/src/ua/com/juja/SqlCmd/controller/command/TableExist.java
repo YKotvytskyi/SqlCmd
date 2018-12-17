@@ -4,8 +4,6 @@ import ua.com.juja.SqlCmd.model.DatabaseManager;
 import ua.com.juja.SqlCmd.model.Table;
 import ua.com.juja.SqlCmd.view.View;
 
-import java.util.Arrays;
-
 public class TableExist implements Command {
 
     private final DatabaseManager dm;
@@ -36,7 +34,11 @@ public class TableExist implements Command {
         if (table.isError()) {
             throw new RuntimeException(table.getMessage());
         }
-        view.write(table.printTable());
-        view.write(String.format("Таблица %s' существует.",cmdData[1]));
+        if (table.geRowCount() > 0){
+            view.write(String.format("Таблица '%s' существует.",cmdData[1]));
+        }
+        else {
+            view.write(String.format("Таблица '%s' не существует.",cmdData[1]));
+        }
     }
 }

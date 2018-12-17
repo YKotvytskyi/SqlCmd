@@ -95,7 +95,7 @@ public class Table {
 
     private String[] Columns;
 
-    public int getLength(){
+    public int geRowCount(){
         return Rows.length;
     }
 
@@ -103,7 +103,7 @@ public class Table {
         String result = getHorizontalLine();
         result += getColumnNames();
         result += getHorizontalLine();
-        for(int i = 0; i < getLength(); i++){
+        for(int i = 0; i < geRowCount(); i++){
             result += PrintRow(i);
         }
         result += getHorizontalLine();

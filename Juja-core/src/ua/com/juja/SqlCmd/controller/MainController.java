@@ -20,6 +20,8 @@ public class MainController {
         commands = new Command[]{
             new Connect(dm,view),
             new Create(dm,view),
+            new Drop(dm,view),
+            new TableExist(dm,view),
             new Help(view,configFile),
             new Exit(view),
             new Unsupported(view)
@@ -142,7 +144,7 @@ public class MainController {
             view.write(table.getHorizontalLine());
             view.write(table.getColumnNames());
             view.write(table.getHorizontalLine());
-            for(int i = 0; i < table.getLength(); i++){
+            for(int i = 0; i < table.geRowCount(); i++){
                 view.write(table.PrintRow(i));
             }
             view.write(table.getHorizontalLine());
@@ -162,7 +164,7 @@ public class MainController {
             view.write(table.getHorizontalLine());
             view.write(table.getColumnNames());
             view.write(table.getHorizontalLine());
-            for(int i = 0; i < table.getLength(); i++){
+            for(int i = 0; i < table.geRowCount(); i++){
                 view.write(table.PrintRow(i));
             }
             view.write(table.getHorizontalLine());
@@ -198,7 +200,7 @@ public class MainController {
             view.write(table.getHorizontalLine());
             view.write(table.getColumnNames());
             view.write(table.getHorizontalLine());
-            for(int i = 0; i < table.getLength(); i++){
+            for(int i = 0; i < table.geRowCount(); i++){
                 view.write(table.PrintRow(i));
             }
             view.write(table.getHorizontalLine());
@@ -211,12 +213,12 @@ public class MainController {
         try {
             checkExactParam(command.length,2);
             String tableName = command[1];
-            if (dm.TableExist(tableName).getLength() > 0) {
+            if (dm.TableExist(tableName).geRowCount() > 0) {
                 Table table = dm.Find(tableName);
                 view.write(table.getHorizontalLine());
                 view.write(table.getColumnNames());
                 view.write(table.getHorizontalLine());
-                for(int i = 0; i < table.getLength(); i++){
+                for(int i = 0; i < table.geRowCount(); i++){
                     view.write(table.PrintRow(i));
                 }
                 view.write(table.getHorizontalLine());
@@ -241,7 +243,7 @@ public class MainController {
             view.write(table.getHorizontalLine());
             view.write(table.getColumnNames());
             view.write(table.getHorizontalLine());
-            for(int i = 0; i < table.getLength(); i++){
+            for(int i = 0; i < table.geRowCount(); i++){
                 view.write(table.PrintRow(i));
             }
             view.write(table.getHorizontalLine());
@@ -261,7 +263,7 @@ public class MainController {
             view.write(table.getHorizontalLine());
             view.write(table.getColumnNames());
             view.write(table.getHorizontalLine());
-            for(int i = 0; i < table.getLength(); i++){
+            for(int i = 0; i < table.geRowCount(); i++){
                 view.write(table.PrintRow(i));
             }
             view.write(table.getHorizontalLine());
@@ -281,7 +283,7 @@ public class MainController {
             view.write(table.getHorizontalLine());
             view.write(table.getColumnNames());
             view.write(table.getHorizontalLine());
-            for(int i = 0; i < table.getLength(); i++){
+            for(int i = 0; i < table.geRowCount(); i++){
                 view.write(table.PrintRow(i));
             }
             view.write(table.getHorizontalLine());
