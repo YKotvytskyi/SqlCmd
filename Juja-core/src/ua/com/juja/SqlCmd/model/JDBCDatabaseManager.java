@@ -103,20 +103,24 @@ public class JDBCDatabaseManager implements DatabaseManager {
     }
 
     private Table executeQuery(dbCommand sqlCmdType, Object[] param ){
-        try {
-            PreparedStatement stmt = null;
-            switch (sqlCmdType) {
-                case Tables:
-                    stmt = ConnObj.prepareStatement(dbType.List());
-                    break;
-                case Find :
-                    stmt = ConnObj.prepareStatement(dbType.Select(param[0].toString()));
-                    break;
-                case TableExist:
-                    stmt = ConnObj.prepareStatement(dbType.TableExist(param[0].toString()));
-                    break;
-            }
-            getDataFromDB(stmt.executeQuery(), stmt.getMetaData());
+
+        String sqlCmd = null;
+        switch (sqlCmdType) {
+            case Tables:
+                sqlCmd = dbType.List();
+                break;
+            case Find :
+                sqlCmd = dbType.Select(param[0].toString());
+                break;
+            case TableExist:
+                sqlCmd =  dbType.TableExist(param[0].toString());
+                break;
+        }
+
+        try (PreparedStatement stmt = ConnObj.prepareStatement(sqlCmd);
+                ResultSet sqlResult = stmt.executeQuery())
+        {
+            getDataFromDB(sqlResult, stmt.getMetaData());
             return new Table(Rows, Columns);
         } catch(Exception sqlException) {
             sqlException.printStackTrace();
