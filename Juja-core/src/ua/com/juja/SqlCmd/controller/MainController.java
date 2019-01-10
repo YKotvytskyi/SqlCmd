@@ -20,6 +20,8 @@ public class MainController {
         commands = new Command[]{
             new Connect(dm,view),
             new Create(dm,view),
+            new Find(dm,view),
+            new Tables(dm,view),
             new Drop(dm,view),
             new TableExist(dm,view),
             new Help(view,configFile),
