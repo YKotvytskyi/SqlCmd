@@ -20,7 +20,7 @@ public class TableExist implements Command {
     }
 
     @Override
-    public void process(String command) throws Exception {
+    public void process(String command){
         String[] cmdData = command.split("\\|");
         if (cmdData.length != 2) {
             throw new IllegalArgumentException(
